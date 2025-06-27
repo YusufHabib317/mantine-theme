@@ -1,0 +1,61 @@
+.root {
+    position: relative;
+    width: 100%;
+  }
+  
+  .input {
+    width: 100%;
+    height: 3.75rem;
+    padding: 1.25rem 1rem 0.5rem 1.25rem;
+    font-size: 1.125rem;
+    border-radius: var(--mantine-radius-md);
+    background: var(--mantine-color-body);
+    transition: outline-color 0.18s ease;
+    border: 1px solid var(--mantine-color-gray-3);
+    outline: none;
+    transition: border-color 0.18s ease;
+  }
+  
+  .input:hover {
+    border-color: var(--mantine-color-gray-5);
+  }
+    
+    .input:focus {
+    border-color: var(--mantine-color-blue-5);
+  }
+  
+  .label {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 0.25rem;
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--mantine-color-grey-6);
+    background: var(--mantine-color-body);
+    pointer-events: none;
+    transition:
+      top 0.18s ease,
+      transform 0.18s ease,
+      font-size 0.18s ease,
+      color 0.18s ease;
+    z-index: 2;
+  }
+  
+  .root:has(.input:focus) .label,
+  .root:has(.input:not(:placeholder-shown)) .label {
+    top: -0.45rem;
+    transform: translateY(0);
+    font-size: 0.75rem;
+    color: var(--mantine-color-material-blue-6);
+  }
+  
+  .root[data-invalid] .label {
+    color: var(--mantine-color-error);
+  }
+  
+  .root:has(.input:not(:placeholder-shown)) .input {
+    outline-color: var(--mantine-color-material-blue-5);
+  }
+  
