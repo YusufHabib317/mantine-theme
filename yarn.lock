@@ -1468,6 +1468,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"countries-list@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "countries-list@npm:3.1.1"
+  checksum: 10c0/26734d5927ee9dafa30e4da214b6ab7ecf7cdd93516e5bb077d6fdb1f9f37b4fd8698987b0062c1f3b0c95d18fe947f941ef0ab8c3cc486ef33f1c3dca2678b7
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:^7.0.3":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
@@ -3694,6 +3701,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mantine-flagpack@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "mantine-flagpack@npm:4.1.1"
+  peerDependencies:
+    "@mantine/core": ">=7.0.0"
+    "@mantine/hooks": ">=7.0.0"
+    clsx: ">=2.1.0"
+    react: ">=18.2.0"
+    react-dom: ">=18.2.0"
+  checksum: 10c0/e9c251fdeba5cb568a791ea4b29e47adccfb632689de10752546f5c5ac3b96e16e125ed94c48c50503f900931a2f126d428d3723803b7d904b1a179f1cee7811
+  languageName: node
+  linkType: hard
+
 "mantine-minimal-next-template@workspace:.":
   version: 0.0.0-use.local
   resolution: "mantine-minimal-next-template@workspace:."
@@ -3708,6 +3728,7 @@ __metadata:
     "@types/react-dom": "npm:19.1.6"
     "@typescript-eslint/eslint-plugin": "npm:^6.2.0"
     "@typescript-eslint/parser": "npm:^6.2.0"
+    countries-list: "npm:^3.1.1"
     dayjs: "npm:^1.11.13"
     eslint: "npm:9.29.0"
     eslint-config-airbnb: "npm:^19.0.4"
@@ -3718,6 +3739,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.31.10"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-sonarjs: "npm:^0.19.0"
+    mantine-flagpack: "npm:^4.1.1"
     material-symbols: "npm:^0.31.9"
     next: "npm:15.3.3"
     postcss: "npm:^8.5.5"

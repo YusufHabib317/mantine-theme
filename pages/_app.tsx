@@ -1,4 +1,5 @@
 import "@mantine/core/styles.css";
+import "mantine-flagpack/styles.css";
 import "material-symbols/outlined.css";
 import "../styles/material-symbols.css";
 import Head from "next/head";

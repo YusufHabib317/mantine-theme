@@ -18,6 +18,7 @@ import ButtonShowcase from "../src/components/buttons";
 import CustomCascader from "../src/components/cascad";
 import { cascaderOptions } from "../src/components/data/cascade-data";
 import ColorSchemeToggle from "../src/components/color-scheme-toggle";
+import SelectWithFlagsDemo from "../src/components/select-with-flags/select-with-flags-demo";
 
 export default function IndexPage() {
   return (
@@ -32,9 +33,12 @@ export default function IndexPage() {
 
       <Grid>
         <Grid.Col span={{ base: 12, md: 8 }}>
-          <ContactForm />
+          <Stack>
+            <ContactForm />
+            <SelectWithFlagsDemo />
+          </Stack>
         </Grid.Col>
-        
+
         <Grid.Col span={{ base: 12, md: 4 }}>
           <Stack>
             <SettingsPanel />
