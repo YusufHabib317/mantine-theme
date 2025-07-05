@@ -11,7 +11,9 @@ import {
   Title,
   Select,
   Box,
+  Button,
 } from "@mantine/core";
+import Link from "next/link";
 import SettingsPanel from "../src/components/setting-panel";
 import ContactForm from "../src/components/contact-form";
 import ButtonShowcase from "../src/components/buttons";
@@ -23,13 +25,20 @@ import SelectWithFlagsDemo from "../src/components/select-with-flags/select-with
 export default function IndexPage() {
   return (
     <Container size="lg" py="xl">
-      <Paper p="xl" mb="xl" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
-        <Group justify="space-between" align="center">
-         <Box  w="100%" ta="center" mt="md">
-           <ColorSchemeToggle />
-         </Box>
-        </Group>
-      </Paper>
+    <Paper
+      p="xl"
+      mb="xl"
+      style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
+    >
+      <Group justify="center">
+        <ColorSchemeToggle />
+        <Link href="/form" style={{ textDecoration: 'none' }}>
+          <Button size="lg" variant="white" color="blue">
+            Go to Form
+          </Button>
+        </Link>
+      </Group>
+    </Paper>
 
       <Grid>
         <Grid.Col span={{ base: 12, md: 8 }}>

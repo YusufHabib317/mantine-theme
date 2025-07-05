@@ -47,13 +47,13 @@ export const materialTheme = createTheme({
       },
     }),
 
-    TextInput: TextInput.extend({
-      classNames: textInputClasses,
-    }),
+    // TextInput: TextInput.extend({
+    //   classNames: textInputClasses,
+    // }),
 
-    Select: Select.extend({
-      classNames: selectClasses,
-    }),
+    // Select: Select.extend({
+    //   classNames: selectClasses,
+    // }),
 
   },
 });
