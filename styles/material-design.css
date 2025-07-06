@@ -1,0 +1,259 @@
+/* Material Design 3 Global Variables and Styles */
+
+:root {
+  /* Material Design 3 Elevation System */
+  --md-elevation-0: none;
+  --md-elevation-1: 0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15);
+  --md-elevation-2: 0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15);
+  --md-elevation-3: 0px 1px 3px 0px rgba(0,0,0,0.3), 0px 4px 8px 3px rgba(0,0,0,0.15);
+  --md-elevation-4: 0px 2px 3px 0px rgba(0,0,0,0.3), 0px 6px 10px 4px rgba(0,0,0,0.15);
+  --md-elevation-5: 0px 4px 4px 0px rgba(0,0,0,0.3), 0px 8px 12px 6px rgba(0,0,0,0.15);
+
+  /* Material Design 3 Motion System */
+  --md-motion-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md-motion-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-motion-decelerated: cubic-bezier(0, 0, 0, 1);
+  --md-motion-accelerated: cubic-bezier(0.3, 0, 1, 1);
+
+  /* Material Design 3 Duration System */
+  --md-duration-short1: 50ms;
+  --md-duration-short2: 100ms;
+  --md-duration-short3: 150ms;
+  --md-duration-short4: 200ms;
+  --md-duration-medium1: 250ms;
+  --md-duration-medium2: 300ms;
+  --md-duration-medium3: 350ms;
+  --md-duration-medium4: 400ms;
+  --md-duration-long1: 450ms;
+  --md-duration-long2: 500ms;
+  --md-duration-long3: 550ms;
+  --md-duration-long4: 600ms;
+
+  /* Material Design 3 Surface Colors */
+  --md-surface-dim: #DDD8E1;
+  --md-surface-bright: #FDF8FD;
+  --md-surface-container-lowest: #FFFFFF;
+  --md-surface-container-low: #F7F2FA;
+  --md-surface-container: #F3EDF7;
+  --md-surface-container-high: #ECE6F0;
+  --md-surface-container-highest: #E6E0E9;
+
+  /* Material Design 3 State Layers */
+  --md-state-hover: rgba(103,80,164,0.08);
+  --md-state-focus: rgba(103,80,164,0.12);
+  --md-state-pressed: rgba(103,80,164,0.16);
+  --md-state-dragged: rgba(103,80,164,0.16);
+}
+
+/* Material Design 3 Ripple Effect Animation */
+@keyframes md-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Material Design 3 Skeleton Loading Animation */
+@keyframes skeleton-loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Material Design 3 Focus Ring */
+.md-focus-ring {
+  outline: 2px solid var(--mantine-color-md-primary-7);
+  outline-offset: 2px;
+  border-radius: inherit;
+}
+
+/* Material Design 3 Elevation Classes */
+.md-elevation-0 { box-shadow: var(--md-elevation-0); }
+.md-elevation-1 { box-shadow: var(--md-elevation-1); }
+.md-elevation-2 { box-shadow: var(--md-elevation-2); }
+.md-elevation-3 { box-shadow: var(--md-elevation-3); }
+.md-elevation-4 { box-shadow: var(--md-elevation-4); }
+.md-elevation-5 { box-shadow: var(--md-elevation-5); }
+
+/* Material Design 3 Surface Classes */
+.md-surface-dim { background-color: var(--md-surface-dim); }
+.md-surface-bright { background-color: var(--md-surface-bright); }
+.md-surface-container-lowest { background-color: var(--md-surface-container-lowest); }
+.md-surface-container-low { background-color: var(--md-surface-container-low); }
+.md-surface-container { background-color: var(--md-surface-container); }
+.md-surface-container-high { background-color: var(--md-surface-container-high); }
+.md-surface-container-highest { background-color: var(--md-surface-container-highest); }
+
+/* Material Design 3 State Layer Classes */
+.md-state-hover:hover { background-color: var(--md-state-hover); }
+.md-state-focus:focus { background-color: var(--md-state-focus); }
+.md-state-pressed:active { background-color: var(--md-state-pressed); }
+
+/* Material Design 3 Typography Scale */
+.md-display-large {
+  font-size: 57px;
+  line-height: 64px;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+}
+
+.md-display-medium {
+  font-size: 45px;
+  line-height: 52px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.md-display-small {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.md-headline-large {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.md-headline-medium {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.md-headline-small {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.md-title-large {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.md-title-medium {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+}
+
+.md-title-small {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+.md-label-large {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+.md-label-medium {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.md-label-small {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.md-body-large {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.md-body-medium {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+}
+
+.md-body-small {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+
+/* Material Design 3 Utility Classes */
+.md-rounded-none { border-radius: 0px; }
+.md-rounded-xs { border-radius: 4px; }
+.md-rounded-sm { border-radius: 8px; }
+.md-rounded-md { border-radius: 12px; }
+.md-rounded-lg { border-radius: 16px; }
+.md-rounded-xl { border-radius: 20px; }
+.md-rounded-2xl { border-radius: 28px; }
+.md-rounded-full { border-radius: 9999px; }
+
+/* Material Design 3 Interactive States */
+.md-interactive {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--md-duration-short3) var(--md-motion-standard);
+}
+
+.md-interactive::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity var(--md-duration-short3) var(--md-motion-standard);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.md-interactive:hover::before { opacity: 0.08; }
+.md-interactive:focus-visible::before { opacity: 0.12; }
+.md-interactive:active::before { opacity: 0.16; }
+
+/* Material Design 3 Disabled State */
+.md-disabled {
+  opacity: 0.38;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Material Design 3 Loading State */
+.md-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.md-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+}

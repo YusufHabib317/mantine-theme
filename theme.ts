@@ -1,59 +1,55 @@
-import {
-  createTheme,
-  Button,
-  TextInput,
-  Select,
-} from '@mantine/core';
-import buttonClasses from './styles/button.module.css';
-import textInputClasses from './styles/textInput.module.css';
-import selectClasses from './styles/select.module.css';
+import { windows95Theme } from './themes/windows95';
+import { glassTheme } from './themes/glass';
+import { materialTheme } from './themes/material';
 
-export const materialTheme = createTheme({
-  fontFamily: 'Roboto, -apple-system, BlinkMacSystemFont, sans-serif',
-  primaryColor: 'material-blue',
-  defaultRadius: 'md',
-  colors: {
-    'material-blue': [
-      '#E3F2FD', // 0 - lightest
-      '#BBDEFB', // 1
-      '#90CAF9', // 2
-      '#64B5F6', // 3
-      '#42A5F5', // 4
-      '#2196F3', // 5 - primary shade
-      '#1E88E5', // 6
-      '#1976D2', // 7
-      '#1565C0', // 8
-      '#0D47A1', // 9 - darkest
-    ],
-    'material-green': [
-      '#E8F5E9', // 0
-      '#C8E6C9', // 1
-      '#A5D6A7', // 2
-      '#81C784', // 3
-      '#66BB6A', // 4
-      '#4CAF50', // 5 - primary shade
-      '#43A047', // 6
-      '#388E3C', // 7
-      '#2E7D32', // 8
-      '#1B5E20', // 9
-    ],
+export type ThemeType = 'windows95' | 'glass' | 'material';
+
+export const getTheme = (themeName: ThemeType) =>
+  ({ windows95: windows95Theme, glass: glassTheme, material: materialTheme })[themeName];
+
+export const themeHeaders = {
+  windows95: {
+    background: 'linear-gradient(90deg,#0087FF 0%,#006FCC 100%)',
+    borderBottom: '1px solid #004080',
+    color: 'white',
   },
-
-  components: {
-    Button: Button.extend({
-      classNames: buttonClasses,
-      defaultProps: {
-        radius: 'lg',
-      },
-    }),
-
-    // TextInput: TextInput.extend({
-    //   classNames: textInputClasses,
-    // }),
-
-    // Select: Select.extend({
-    //   classNames: selectClasses,
-    // }),
-
+  glass: {
+    background: 'rgba(255,255,255,0.05)',
+    backdropFilter: 'blur(24px)',
+    borderBottom: '1px solid rgba(255,255,255,0.12)',
   },
-});
+  material: {
+    background: 'white',
+    borderBottom: '1px solid #E0E0E0',
+    boxShadow: 'var(--md-elevation-1)',
+  },
+} as const;
+
+export const themeBackgrounds = {
+  windows95: {
+    background: '#008080',
+    backgroundImage:
+      'linear-gradient(45deg,#008080 25%,transparent 25%),\
+       linear-gradient(-45deg,#008080 25%,transparent 25%),\
+       linear-gradient(45deg,transparent 75%,#008080 75%),\
+       linear-gradient(-45deg,transparent 75%,#008080 75%)',
+    backgroundSize: '20px 20px',
+    backgroundPosition: '0 0,0 10px,10px -10px,-10px 0',
+  },
+  glass: {
+    background: 'linear-gradient(135deg,#667eea 0%,#764ba2 50%,#f093fb 100%)',
+    minHeight: '100vh',
+  },
+  material: {
+    background: 'linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%)',
+    minHeight: '100vh',
+  },
+} as const;
+
+export const themes = {
+  windows95: windows95Theme,
+  glass: glassTheme,
+  material: materialTheme,
+} as const;
+
+export const getThemeFromMap = (themeName: ThemeType) => themes[themeName];
