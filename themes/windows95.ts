@@ -1,44 +1,4 @@
-import {
-  createTheme,
-  Button,
-  Card,
-  TextInput,
-  Modal,
-  Progress,
-  Tabs,
-  Notification,
-  Select,
-  PasswordInput,
-  ColorInput,
-  FileInput,
-  Avatar,
-  ActionIcon,
-  Textarea,
-  NumberInput,
-  Radio,
-  Slider,
-  RangeSlider,
-  Rating,
-  Badge,
-  Loader,
-  Skeleton,
-  Accordion,
-  Drawer,
-  Tooltip,
-  Popover,
-  Menu,
-  SegmentedControl,
-  Chip,
-  Pill,
-  Breadcrumbs,
-  Anchor,
-  List,
-  Alert,
-  Title,
-  Text,
-} from '@mantine/core';
-import { DatePickerInput } from '@mantine/dates';
-import { Spotlight } from '@mantine/spotlight';
+import { createTheme } from '@mantine/core';
 
 export const windows95Theme = createTheme({
   fontFamily: '"MS Sans Serif", "Microsoft Sans Serif", Tahoma, sans-serif',
@@ -70,7 +30,7 @@ export const windows95Theme = createTheme({
     win95Shadow: 'inset -1px -1px 0 #808080, inset 1px 1px 0 #FFFFFF',
   },
   components: {
-    Button: Button.extend({
+    Button: {
       styles: {
         root: {
           border: '2px outset var(--mantine-color-gray-5)',
@@ -98,9 +58,9 @@ export const windows95Theme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    Card: Card.extend({
+    Card: {
       styles: {
         root: {
           border: '2px outset #C0C0C0',
@@ -109,9 +69,9 @@ export const windows95Theme = createTheme({
           boxShadow: 'inset -1px -1px 0 #808080, inset 1px 1px 0 #FFFFFF',
         },
       },
-    }),
+    },
 
-    TextInput: TextInput.extend({
+    TextInput: {
       styles: {
         input: {
           border: '2px inset #C0C0C0',
@@ -132,9 +92,9 @@ export const windows95Theme = createTheme({
           boxShadow: 'inset -1px -1px 0 #808080, inset 1px 1px 0 #FFFFFF',
         },
       },
-    }),
+    },
 
-    Modal: Modal.extend({
+    Modal: {
       styles: {
         content: {
           border: '2px outset #C0C0C0',
@@ -159,15 +119,15 @@ export const windows95Theme = createTheme({
           '&:active': { borderStyle: 'inset' },
         },
       },
-    }),
+    },
 
-    Progress: Progress.extend({
+    Progress: {
       styles: {
         root: { border: '2px inset #C0C0C0', height: 20 },
       },
-    }),
+    },
 
-    Tabs: Tabs.extend({
+    Tabs: {
       styles: {
         tab: {
           border: '2px outset #C0C0C0',
@@ -188,9 +148,9 @@ export const windows95Theme = createTheme({
           padding: 8,
         },
       },
-    }),
+    },
 
-    Notification: Notification.extend({
+    Notification: {
       styles: {
         root: {
           border: '2px outset #C0C0C0',
@@ -202,9 +162,9 @@ export const windows95Theme = createTheme({
           boxShadow: 'inset -1px -1px 0 #808080, inset 1px 1px 0 #FFFFFF',
         },
       },
-    }),
+    },
 
-    Select: Select.extend({
+    Select: {
       styles: {
         input: {
           border: '2px inset #C0C0C0',
@@ -218,8 +178,8 @@ export const windows95Theme = createTheme({
           },
         },
       },
-    }),
-    PasswordInput: PasswordInput.extend({
+    },
+    PasswordInput: {
       styles: {
         input: {
           border: '2px inset #C0C0C0',
@@ -233,8 +193,8 @@ export const windows95Theme = createTheme({
           },
         },
       },
-    }),
-    ColorInput: ColorInput.extend({
+    },
+    ColorInput: {
       styles: {
         input: {
           border: '2px inset #C0C0C0',
@@ -248,8 +208,8 @@ export const windows95Theme = createTheme({
           },
         },
       },
-    }),
-    FileInput: FileInput.extend({
+    },
+    FileInput: {
       styles: {
         input: {
           border: '2px inset #C0C0C0',
@@ -263,8 +223,8 @@ export const windows95Theme = createTheme({
           },
         },
       },
-    }),
-    Avatar: Avatar.extend({
+    },
+    Avatar: {
       styles: {
         root: {
           border: '2px outset #C0C0C0',
@@ -272,8 +232,8 @@ export const windows95Theme = createTheme({
           boxShadow: 'inset -1px -1px 0 #808080, inset 1px 1px 0 #FFFFFF',
         },
       },
-    }),
-    DatePickerInput: DatePickerInput.extend({
+    },
+    DatePickerInput: {
       styles: {
         input: {
           border: '2px inset #C0C0C0',
@@ -287,8 +247,8 @@ export const windows95Theme = createTheme({
           },
         },
       },
-    }),
-    ActionIcon: ActionIcon.extend({
+    },
+    ActionIcon: {
       styles: {
         root: {
           border: '2px outset #C0C0C0',
@@ -301,9 +261,9 @@ export const windows95Theme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    Textarea: Textarea.extend({
+    Textarea: {
       styles: {
         input: {
           border: '2px inset #C0C0C0',
@@ -317,9 +277,9 @@ export const windows95Theme = createTheme({
         },
         label: { fontSize: 11, marginBottom: 2 },
       },
-    }),
+    },
 
-    NumberInput: NumberInput.extend({
+    NumberInput: {
       styles: {
         input: {
           border: '2px inset #C0C0C0',
@@ -335,9 +295,9 @@ export const windows95Theme = createTheme({
           backgroundColor: 'var(--mantine-color-gray-5)',
         },
       },
-    }),
+    },
 
-    Radio: Radio.extend({
+    Radio: {
       styles: {
         radio: {
           border: '2px inset #C0C0C0',
@@ -348,9 +308,9 @@ export const windows95Theme = createTheme({
         },
         label: { fontSize: 11 },
       },
-    }),
+    },
 
-    Text: Text.extend({
+    Text: {
       styles: {
         root: {
           fontSize: 11,
@@ -358,9 +318,9 @@ export const windows95Theme = createTheme({
           color: 'black',
         },
       },
-    }),
+    },
 
-    Title: Title.extend({
+    Title: {
       styles: {
         root: {
           fontFamily: 'inherit',
@@ -368,9 +328,9 @@ export const windows95Theme = createTheme({
           fontWeight: 'bold',
         },
       },
-    }),
+    },
 
-    Alert: Alert.extend({
+    Alert: {
       styles: {
         root: {
           border: '2px outset #C0C0C0',
@@ -380,9 +340,9 @@ export const windows95Theme = createTheme({
         },
         title: { fontSize: 11, fontWeight: 'bold' },
       },
-    }),
+    },
 
-    Badge: Badge.extend({
+    Badge: {
       styles: {
         root: {
           border: '2px outset #C0C0C0',
@@ -393,9 +353,9 @@ export const windows95Theme = createTheme({
           padding: '2px 6px',
         },
       },
-    }),
+    },
 
-    Slider: Slider.extend({
+    Slider: {
       styles: {
         track: {
           border: '2px inset #C0C0C0',
@@ -409,9 +369,9 @@ export const windows95Theme = createTheme({
           height: 16,
         },
       },
-    }),
+    },
 
-    RangeSlider: RangeSlider.extend({
+    RangeSlider: {
       styles: {
         track: {
           border: '2px inset #C0C0C0',
@@ -425,25 +385,25 @@ export const windows95Theme = createTheme({
           height: 16,
         },
       },
-    }),
+    },
 
-    Rating: Rating.extend({
+    Rating: {
       styles: {
         symbolBody: {
           color: '#FFD700',
         },
       },
-    }),
+    },
 
-    Loader: Loader.extend({
+    Loader: {
       styles: {
         root: {
           color: 'var(--mantine-color-blue-6)',
         },
       },
-    }),
+    },
 
-    Skeleton: Skeleton.extend({
+    Skeleton: {
       styles: {
         root: {
           backgroundColor: 'var(--mantine-color-gray-3)',
@@ -452,9 +412,9 @@ export const windows95Theme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    SegmentedControl: SegmentedControl.extend({
+    SegmentedControl: {
       styles: {
         root: {
           border: '2px inset #C0C0C0',
@@ -470,9 +430,9 @@ export const windows95Theme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    Chip: Chip.extend({
+    Chip: {
       styles: {
         root: {
           border: '2px outset #C0C0C0',
@@ -484,9 +444,9 @@ export const windows95Theme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    Pill: Pill.extend({
+    Pill: {
       styles: {
         root: {
           border: '2px outset #C0C0C0',
@@ -496,9 +456,9 @@ export const windows95Theme = createTheme({
           fontFamily: 'inherit',
         },
       },
-    }),
+    },
 
-    Accordion: Accordion.extend({
+    Accordion: {
       styles: {
         control: {
           border: '2px outset #C0C0C0',
@@ -513,9 +473,9 @@ export const windows95Theme = createTheme({
           fontSize: 11,
         },
       },
-    }),
+    },
 
-    Drawer: Drawer.extend({
+    Drawer: {
       styles: {
         content: {
           border: '2px outset #C0C0C0',
@@ -529,9 +489,9 @@ export const windows95Theme = createTheme({
           borderBottom: '1px solid #004080',
         },
       },
-    }),
+    },
 
-    Tooltip: Tooltip.extend({
+    Tooltip: {
       styles: {
         tooltip: {
           border: '2px outset #C0C0C0',
@@ -541,9 +501,9 @@ export const windows95Theme = createTheme({
           fontFamily: 'inherit',
         },
       },
-    }),
+    },
 
-    Popover: Popover.extend({
+    Popover: {
       styles: {
         dropdown: {
           border: '2px outset #C0C0C0',
@@ -551,9 +511,9 @@ export const windows95Theme = createTheme({
           fontSize: 11,
         },
       },
-    }),
+    },
 
-    Menu: Menu.extend({
+    Menu: {
       styles: {
         dropdown: {
           border: '2px outset #C0C0C0',
@@ -573,18 +533,18 @@ export const windows95Theme = createTheme({
           color: '#808080',
         },
       },
-    }),
+    },
 
-    Breadcrumbs: Breadcrumbs.extend({
+    Breadcrumbs: {
       styles: {
         root: {
           fontSize: 11,
           fontFamily: 'inherit',
         },
       },
-    }),
+    },
 
-    Anchor: Anchor.extend({
+    Anchor: {
       styles: {
         root: {
           fontSize: 11,
@@ -593,9 +553,9 @@ export const windows95Theme = createTheme({
           textDecoration: 'underline',
         },
       },
-    }),
+    },
 
-    List: List.extend({
+    List: {
       styles: {
         root: {
           fontSize: 11,
@@ -605,9 +565,9 @@ export const windows95Theme = createTheme({
           fontSize: 11,
         },
       },
-    }),
+    },
 
-    Spotlight: Spotlight.extend({
+    Spotlight: {
       styles: {
         root: {
           '--spotlight-radius': '0px',
@@ -732,6 +692,6 @@ export const windows95Theme = createTheme({
           },
         },
       },
-    }),
+    },
   },
 });

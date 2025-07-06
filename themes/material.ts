@@ -1,51 +1,4 @@
-import {
-  createTheme,
-  Button,
-  Card,
-  TextInput,
-  Modal,
-  Notification,
-  Select,
-  PasswordInput,
-  ColorInput,
-  FileInput,
-  Avatar,
-  ActionIcon,
-  Textarea,
-  NumberInput,
-  Radio,
-  Slider,
-  RangeSlider,
-  Rating,
-  Badge,
-  Loader,
-  Skeleton,
-  Accordion,
-  Drawer,
-  Tooltip,
-  Popover,
-  Menu,
-  SegmentedControl,
-  Chip,
-  Pill,
-  Breadcrumbs,
-  Anchor,
-  List,
-  Alert,
-  Title,
-  Text,
-  Progress,
-  Switch,
-  Checkbox,
-  Tabs,
-  Paper,
-  Group,
-  Stack,
-  Divider,
-  ThemeIcon,
-} from '@mantine/core';
-import { DatePickerInput } from '@mantine/dates';
-import { Spotlight } from '@mantine/spotlight';
+import { createTheme } from '@mantine/core';
 
 export const materialTheme = createTheme({
   fontFamily: 'Roboto Flex, Roboto, -apple-system, BlinkMacSystemFont, sans-serif',
@@ -121,8 +74,8 @@ export const materialTheme = createTheme({
     mdSurfaceContainerHighest: '#E6E0E9',
   },
   components: {
-    Button: Button.extend({
-      styles: (theme) => ({
+    Button: {
+      styles: {
         root: {
           borderRadius: 20,
           fontWeight: 500,
@@ -132,7 +85,7 @@ export const materialTheme = createTheme({
           padding: '10px 24px',
           position: 'relative',
           overflow: 'hidden',
-          transition: `all ${theme.other.mdDurationShort4} ${theme.other.mdMotionStandard}`,
+          transition: 'all 200ms cubic-bezier(0.2, 0, 0, 1)',
           textTransform: 'none',
 
           // State layer overlay
@@ -142,7 +95,7 @@ export const materialTheme = createTheme({
             inset: 0,
             background: 'currentColor',
             opacity: 0,
-            transition: `opacity ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+            transition: 'opacity 150ms cubic-bezier(0.2, 0, 0, 1)',
             borderRadius: 'inherit',
           },
 
@@ -155,15 +108,15 @@ export const materialTheme = createTheme({
           '&[data-variant="filled"]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
             color: 'white',
-            boxShadow: theme.other.mdElevation1,
+            boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
             border: 'none',
 
             '&:hover': {
-              boxShadow: theme.other.mdElevation2,
+              boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
               transform: 'translateY(-1px)',
             },
             '&:active': {
-              boxShadow: theme.other.mdElevation1,
+              boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
               transform: 'translateY(0)',
             },
             '&:disabled': {
@@ -212,7 +165,7 @@ export const materialTheme = createTheme({
 
             '&:hover': {
               backgroundColor: 'var(--mantine-color-md-secondary-3)',
-              boxShadow: theme.other.mdElevation1,
+              boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
             },
             '&:disabled': {
               backgroundColor: 'rgba(29,27,32,0.12)',
@@ -228,53 +181,53 @@ export const materialTheme = createTheme({
         rightIcon: {
           marginLeft: 8,
         },
-      }),
-    }),
+      },
+    },
 
-    Card: Card.extend({
-      styles: (theme) => ({
+    Card: {
+      styles: {
         root: {
-          backgroundColor: theme.other.mdSurfaceContainer,
+          backgroundColor: '#F3EDF7',
           borderRadius: 12,
-          boxShadow: theme.other.mdElevation1,
-          transition: `all ${theme.other.mdDurationMedium2} ${theme.other.mdMotionStandard}`,
+          boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
+          transition: 'all 300ms cubic-bezier(0.2, 0, 0, 1)',
           border: 'none',
           overflow: 'hidden',
 
           '&:hover': {
-            boxShadow: theme.other.mdElevation2,
+            boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
             transform: 'translateY(-2px)',
           },
 
           // Elevated card variant
           '&[data-variant="elevated"]': {
-            backgroundColor: theme.other.mdSurfaceContainerLow,
-            boxShadow: theme.other.mdElevation2,
+            backgroundColor: '#F7F2FA',
+            boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
 
             '&:hover': {
-              boxShadow: theme.other.mdElevation3,
+              boxShadow: '0px 1px 3px 0px rgba(0,0,0,0.3), 0px 4px 8px 3px rgba(0,0,0,0.15)',
             },
           },
 
           // Filled card variant
           '&[data-variant="filled"]': {
-            backgroundColor: theme.other.mdSurfaceContainerHighest,
+            backgroundColor: '#E6E0E9',
             boxShadow: 'none',
 
             '&:hover': {
-              boxShadow: theme.other.mdElevation1,
+              boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
             },
           },
 
           // Outlined card variant
           '&[data-variant="outline"]': {
-            backgroundColor: theme.other.mdSurfaceContainerLowest,
+            backgroundColor: '#FFFFFF',
             border: '1px solid var(--mantine-color-md-surface-4)',
             boxShadow: 'none',
 
             '&:hover': {
               borderColor: 'var(--mantine-color-md-surface-5)',
-              boxShadow: theme.other.mdElevation1,
+              boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
             },
           },
         },
@@ -289,11 +242,11 @@ export const materialTheme = createTheme({
             paddingBottom: 24,
           },
         },
-      }),
-    }),
+      },
+    },
 
-    TextInput: TextInput.extend({
-      styles: (theme) => ({
+    TextInput: {
+      styles: {
         wrapper: {
           position: 'relative',
         },
@@ -312,8 +265,8 @@ export const materialTheme = createTheme({
           fontSize: 16,
           lineHeight: '24px',
           padding: '16px 30px',
-          backgroundColor: theme.other.mdSurfaceContainerLowest,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          backgroundColor: '#FFFFFF',
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&::placeholder': {
             color: 'rgba(73,69,79,0.6)',
@@ -322,15 +275,15 @@ export const materialTheme = createTheme({
 
           '&:hover': {
             borderColor: '#49454F',
-            backgroundColor: theme.other.mdSurfaceContainerLow,
+            backgroundColor: '#F7F2FA',
           },
 
           '&:focus': {
             borderColor: 'var(--mantine-color-md-primary-7)',
             borderWidth: 2,
             outline: 0,
-            backgroundColor: theme.other.mdSurfaceContainerLowest,
-            boxShadow: `0 0 0 1px var(--mantine-color-md-primary-7)`,
+            backgroundColor: '#FFFFFF',
+            boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
           '&:disabled': {
@@ -343,7 +296,7 @@ export const materialTheme = createTheme({
             borderColor: 'var(--mantine-color-md-error-6)',
             '&:focus': {
               borderColor: 'var(--mantine-color-md-error-6)',
-              boxShadow: `0 0 0 1px var(--mantine-color-md-error-6)`,
+              boxShadow: '0 0 0 1px var(--mantine-color-md-error-6)',
             },
           },
 
@@ -368,20 +321,20 @@ export const materialTheme = createTheme({
           marginTop: 4,
           letterSpacing: 0.4,
         },
-      }),
-    }),
+      },
+    },
 
-    Modal: Modal.extend({
-      styles: (theme) => ({
+    Modal: {
+      styles: {
         overlay: {
           backgroundColor: 'rgba(0,0,0,0.32)',
           backdropFilter: 'blur(4px)',
         },
 
         content: {
-          backgroundColor: theme.other.mdSurfaceContainerHigh,
+          backgroundColor: '#ECE6F0',
           borderRadius: 28,
-          boxShadow: theme.other.mdElevation3,
+          boxShadow: '0px 1px 3px 0px rgba(0,0,0,0.3), 0px 4px 8px 3px rgba(0,0,0,0.15)',
           maxWidth: 560,
           border: 'none',
           overflow: 'hidden',
@@ -413,23 +366,23 @@ export const materialTheme = createTheme({
             backgroundColor: 'rgba(73,69,79,0.08)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    Notification: Notification.extend({
+    Notification: {
       styles: {
         root: {
           backgroundColor: 'white',
           borderRadius: 12,
           color: '#1D1B20',
           padding: '12px 16px',
-          boxShadow: 'var(--md-elevation-1)',
+          boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
         },
       },
-    }),
+    },
 
-    Select: Select.extend({
-      styles: (theme) => ({
+    Select: {
+      styles: {
         label: {
           fontSize: 12,
           fontWeight: 500,
@@ -443,20 +396,20 @@ export const materialTheme = createTheme({
           border: '1px solid #79747E',
           padding: '16px 30px',
           fontSize: 16,
-          backgroundColor: theme.other.mdSurfaceContainerLowest,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          backgroundColor: '#FFFFFF',
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             borderColor: '#49454F',
-            backgroundColor: theme.other.mdSurfaceContainerLow,
+            backgroundColor: '#F7F2FA',
           },
 
           '&:focus': {
             borderColor: 'var(--mantine-color-md-primary-7)',
             borderWidth: 2,
             outline: 0,
-            backgroundColor: theme.other.mdSurfaceContainerLowest,
-            boxShadow: `0 0 0 1px var(--mantine-color-md-primary-7)`,
+            backgroundColor: '#FFFFFF',
+            boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
           '&[data-with-left-section]': {
@@ -465,10 +418,10 @@ export const materialTheme = createTheme({
         },
 
         dropdown: {
-          backgroundColor: theme.other.mdSurfaceContainer,
+          backgroundColor: '#F3EDF7',
           border: 'none',
           borderRadius: 4,
-          boxShadow: theme.other.mdElevation2,
+          boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
           padding: 4,
         },
 
@@ -487,11 +440,11 @@ export const materialTheme = createTheme({
             color: 'var(--mantine-color-md-primary-7)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    PasswordInput: PasswordInput.extend({
-      styles: (theme) => ({
+    PasswordInput: {
+      styles: {
         label: {
           fontSize: 12,
           fontWeight: 500,
@@ -505,20 +458,20 @@ export const materialTheme = createTheme({
           border: '1px solid #79747E',
           padding: '16px 30px',
           fontSize: 16,
-          backgroundColor: theme.other.mdSurfaceContainerLowest,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          backgroundColor: '#FFFFFF',
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             borderColor: '#49454F',
-            backgroundColor: theme.other.mdSurfaceContainerLow,
+            backgroundColor: '#F7F2FA',
           },
 
           '&:focus': {
             borderColor: 'var(--mantine-color-md-primary-7)',
             borderWidth: 2,
             outline: 0,
-            backgroundColor: theme.other.mdSurfaceContainerLowest,
-            boxShadow: `0 0 0 1px var(--mantine-color-md-primary-7)`,
+            backgroundColor: '#FFFFFF',
+            boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
           '&[data-with-left-section]': {
@@ -532,11 +485,11 @@ export const materialTheme = createTheme({
             backgroundColor: 'rgba(73,69,79,0.08)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    ColorInput: ColorInput.extend({
-      styles: (theme) => ({
+    ColorInput: {
+      styles: {
         label: {
           fontSize: 12,
           fontWeight: 500,
@@ -550,31 +503,31 @@ export const materialTheme = createTheme({
           border: '1px solid #79747E',
           padding: '16px 40px 16px 30px',
           fontSize: 16,
-          backgroundColor: theme.other.mdSurfaceContainerLowest,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          backgroundColor: '#FFFFFF',
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             borderColor: '#49454F',
-            backgroundColor: theme.other.mdSurfaceContainerLow,
+            backgroundColor: '#F7F2FA',
           },
 
           '&:focus': {
             borderColor: 'var(--mantine-color-md-primary-7)',
             borderWidth: 2,
             outline: 0,
-            backgroundColor: theme.other.mdSurfaceContainerLowest,
-            boxShadow: `0 0 0 1px var(--mantine-color-md-primary-7)`,
+            backgroundColor: '#FFFFFF',
+            boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
           '&[data-with-left-section]': {
             paddingLeft: '44px',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    FileInput: FileInput.extend({
-      styles: (theme) => ({
+    FileInput: {
+      styles: {
         label: {
           fontSize: 12,
           fontWeight: 500,
@@ -588,42 +541,42 @@ export const materialTheme = createTheme({
           border: '1px solid #79747E',
           padding: '16px 40px 16px 30px',
           fontSize: 16,
-          backgroundColor: theme.other.mdSurfaceContainerLowest,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          backgroundColor: '#FFFFFF',
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             borderColor: '#49454F',
-            backgroundColor: theme.other.mdSurfaceContainerLow,
+            backgroundColor: '#F7F2FA',
           },
 
           '&:focus': {
             borderColor: 'var(--mantine-color-md-primary-7)',
             borderWidth: 2,
             outline: 0,
-            backgroundColor: theme.other.mdSurfaceContainerLowest,
-            boxShadow: `0 0 0 1px var(--mantine-color-md-primary-7)`,
+            backgroundColor: '#FFFFFF',
+            boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
           '&[data-with-left-section]': {
             paddingLeft: '44px',
           },
         },
-      }),
-    }),
-    Avatar: Avatar.extend({
-      styles: (theme) => ({
+      },
+    },
+    Avatar: {
+      styles: {
         root: {
-          backgroundColor: theme.other.mdSurfaceContainerHigh,
+          backgroundColor: '#ECE6F0',
           borderRadius: '50%',
           border: '1px solid var(--mantine-color-md-surface-4)',
           color: 'var(--mantine-color-md-primary-7)',
           fontWeight: 500,
         },
-      }),
-    }),
+      },
+    },
 
-    DatePickerInput: DatePickerInput.extend({
-      styles: (theme) => ({
+    DatePickerInput: {
+      styles: {
         label: {
           fontSize: 12,
           fontWeight: 500,
@@ -637,34 +590,34 @@ export const materialTheme = createTheme({
           border: '1px solid #79747E',
           padding: '16px 40px 16px 30px',
           fontSize: 16,
-          backgroundColor: theme.other.mdSurfaceContainerLowest,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          backgroundColor: '#FFFFFF',
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             borderColor: '#49454F',
-            backgroundColor: theme.other.mdSurfaceContainerLow,
+            backgroundColor: '#F7F2FA',
           },
 
           '&:focus': {
             borderColor: 'var(--mantine-color-md-primary-7)',
             borderWidth: 2,
             outline: 0,
-            backgroundColor: theme.other.mdSurfaceContainerLowest,
-            boxShadow: `0 0 0 1px var(--mantine-color-md-primary-7)`,
+            backgroundColor: '#FFFFFF',
+            boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
           '&[data-with-left-section]': {
             paddingLeft: '44px',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    ActionIcon: ActionIcon.extend({
-      styles: (theme) => ({
+    ActionIcon: {
+      styles: {
         root: {
           borderRadius: 20,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&[data-variant="filled"]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
@@ -672,7 +625,7 @@ export const materialTheme = createTheme({
 
             '&:hover': {
               backgroundColor: 'var(--mantine-color-md-primary-6)',
-              boxShadow: theme.other.mdElevation1,
+              boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
             },
           },
 
@@ -705,18 +658,18 @@ export const materialTheme = createTheme({
             },
           },
         },
-      }),
-    }),
+      },
+    },
 
-    Switch: Switch.extend({
-      styles: (theme) => ({
+    Switch: {
+      styles: {
         track: {
           backgroundColor: 'var(--mantine-color-md-surface-4)',
           border: '2px solid var(--mantine-color-md-surface-4)',
           borderRadius: 16,
           height: 28,
           width: 45,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&[data-checked]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
@@ -730,8 +683,8 @@ export const materialTheme = createTheme({
           borderRadius: '50%',
           height: 15,
           width: 15,
-          boxShadow: theme.other.mdElevation1,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&[data-checked]': {
             backgroundColor: 'white',
@@ -743,18 +696,18 @@ export const materialTheme = createTheme({
           color: 'var(--mantine-color-md-surface-9)',
           fontWeight: 400,
         },
-      }),
-    }),
+      },
+    },
 
-    Checkbox: Checkbox.extend({
-      styles: (theme) => ({
+    Checkbox: {
+      styles: {
         input: {
           backgroundColor: 'transparent',
           border: '2px solid var(--mantine-color-md-surface-6)',
           borderRadius: 2,
           width: 18,
           height: 18,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:checked': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
@@ -771,11 +724,11 @@ export const materialTheme = createTheme({
           color: 'var(--mantine-color-md-surface-9)',
           fontWeight: 400,
         },
-      }),
-    }),
+      },
+    },
 
-    Textarea: Textarea.extend({
-      styles: (theme) => ({
+    Textarea: {
+      styles: {
         wrapper: { position: 'relative' },
 
         label: {
@@ -794,8 +747,8 @@ export const materialTheme = createTheme({
           minHeight: '80px',
           resize: 'vertical',
           padding: '16px',
-          backgroundColor: theme.other.mdSurfaceContainerLowest,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          backgroundColor: '#FFFFFF',
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&::placeholder': {
             color: 'rgba(73,69,79,0.6)',
@@ -804,15 +757,15 @@ export const materialTheme = createTheme({
 
           '&:hover': {
             borderColor: '#49454F',
-            backgroundColor: theme.other.mdSurfaceContainerLow,
+            backgroundColor: '#F7F2FA',
           },
 
           '&:focus': {
             borderColor: 'var(--mantine-color-md-primary-7)',
             borderWidth: 2,
             outline: 0,
-            backgroundColor: theme.other.mdSurfaceContainerLowest,
-            boxShadow: `0 0 0 1px var(--mantine-color-md-primary-7)`,
+            backgroundColor: '#FFFFFF',
+            boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
           '&:disabled': {
@@ -821,11 +774,11 @@ export const materialTheme = createTheme({
             color: 'rgba(29,27,32,0.38)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    NumberInput: NumberInput.extend({
-      styles: (theme) => ({
+    NumberInput: {
+      styles: {
         wrapper: { position: 'relative' },
 
         label: {
@@ -842,20 +795,20 @@ export const materialTheme = createTheme({
           fontSize: 16,
           lineHeight: '24px',
           padding: '16px 40px 16px 16px',
-          backgroundColor: theme.other.mdSurfaceContainerLowest,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          backgroundColor: '#FFFFFF',
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             borderColor: '#49454F',
-            backgroundColor: theme.other.mdSurfaceContainerLow,
+            backgroundColor: '#F7F2FA',
           },
 
           '&:focus': {
             borderColor: 'var(--mantine-color-md-primary-7)',
             borderWidth: 2,
             outline: 0,
-            backgroundColor: theme.other.mdSurfaceContainerLowest,
-            boxShadow: `0 0 0 1px var(--mantine-color-md-primary-7)`,
+            backgroundColor: '#FFFFFF',
+            boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
           '&:disabled': {
@@ -882,18 +835,18 @@ export const materialTheme = createTheme({
             color: 'rgba(29,27,32,0.38)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    Radio: Radio.extend({
-      styles: (theme) => ({
+    Radio: {
+      styles: {
         radio: {
           backgroundColor: 'var(--mantine-color-md-primary-6)',
           border: '2px solid var(--mantine-color-md-surface-6)',
           borderRadius: '50%',
           width: 20,
           height: 20,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:checked': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
@@ -910,10 +863,10 @@ export const materialTheme = createTheme({
           color: 'var(--mantine-color-md-surface-9)',
           fontWeight: 400,
         },
-      }),
-    }),
+      },
+    },
 
-    Text: Text.extend({
+    Text: {
       styles: {
         root: {
           fontSize: 16,
@@ -921,18 +874,18 @@ export const materialTheme = createTheme({
           color: '#1D1B20',
         },
       },
-    }),
+    },
 
-    Title: Title.extend({
+    Title: {
       styles: {
         root: {
           color: '#1D1B20',
           fontWeight: 400,
         },
       },
-    }),
+    },
 
-    Alert: Alert.extend({
+    Alert: {
       styles: {
         root: {
           borderRadius: 12,
@@ -941,10 +894,10 @@ export const materialTheme = createTheme({
         },
         title: { fontWeight: 500, color: '#1D1B20' },
       },
-    }),
+    },
 
-    Badge: Badge.extend({
-      styles: () => ({
+    Badge: {
+      styles: {
         root: {
           borderRadius: 16,
           backgroundColor: 'var(--mantine-color-md-secondary-2)',
@@ -972,11 +925,11 @@ export const materialTheme = createTheme({
             color: 'var(--mantine-color-md-primary-7)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    Slider: Slider.extend({
-      styles: (theme) => ({
+    Slider: {
+      styles: {
         track: {
           backgroundColor: 'var(--mantine-color-md-secondary-3)',
           height: 4,
@@ -994,11 +947,11 @@ export const materialTheme = createTheme({
           width: 20,
           height: 20,
           borderRadius: '50%',
-          boxShadow: theme.other.mdElevation1,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
-            boxShadow: theme.other.mdElevation2,
+            boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
             transform: 'scale(1.1)',
           },
         },
@@ -1011,11 +964,11 @@ export const materialTheme = createTheme({
           borderRadius: 4,
           padding: '4px 8px',
         },
-      }),
-    }),
+      },
+    },
 
-    RangeSlider: RangeSlider.extend({
-      styles: (theme) => ({
+    RangeSlider: {
+      styles: {
         track: {
           backgroundColor: 'var(--mantine-color-md-secondary-3)',
           height: 4,
@@ -1033,11 +986,11 @@ export const materialTheme = createTheme({
           width: 20,
           height: 20,
           borderRadius: '50%',
-          boxShadow: theme.other.mdElevation1,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
-            boxShadow: theme.other.mdElevation2,
+            boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
             transform: 'scale(1.1)',
           },
         },
@@ -1050,24 +1003,24 @@ export const materialTheme = createTheme({
           borderRadius: 4,
           padding: '4px 8px',
         },
-      }),
-    }),
+      },
+    },
 
-    Rating: Rating.extend({
-      styles: (theme) => ({
+    Rating: {
+      styles: {
         symbolBody: {
           color: '#FFB000',
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             transform: 'scale(1.1)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    Progress: Progress.extend({
-      styles: (theme) => ({
+    Progress: {
+      styles: {
         root: {
           backgroundColor: 'var(--mantine-color-md-secondary-2)',
           borderRadius: 2,
@@ -1078,21 +1031,21 @@ export const materialTheme = createTheme({
         bar: {
           backgroundColor: 'var(--mantine-color-md-primary-7)',
           borderRadius: 2,
-          transition: `all ${theme.other.mdDurationMedium2} ${theme.other.mdMotionStandard}`,
+          transition: 'all 300ms cubic-bezier(0.2, 0, 0, 1)',
         },
-      }),
-    }),
+      },
+    },
 
-    Loader: Loader.extend({
-      styles: () => ({
+    Loader: {
+      styles: {
         root: {
           color: 'var(--mantine-color-md-primary-7)',
         },
-      }),
-    }),
+      },
+    },
 
-    Skeleton: Skeleton.extend({
-      styles: () => ({
+    Skeleton: {
+      styles: {
         root: {
           backgroundColor: 'var(--mantine-color-md-secondary-2)',
           borderRadius: 4,
@@ -1102,11 +1055,11 @@ export const materialTheme = createTheme({
             animation: 'skeleton-loading 1.5s ease-in-out infinite',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    Tabs: Tabs.extend({
-      styles: (theme) => ({
+    Tabs: {
+      styles: {
         root: {
           backgroundColor: 'transparent',
         },
@@ -1126,7 +1079,7 @@ export const materialTheme = createTheme({
           letterSpacing: 0.1,
           padding: '12px 16px',
           position: 'relative',
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             backgroundColor: 'rgba(103,80,164,0.08)',
@@ -1156,11 +1109,11 @@ export const materialTheme = createTheme({
           fontSize: 16,
           lineHeight: '24px',
         },
-      }),
-    }),
+      },
+    },
 
-    SegmentedControl: SegmentedControl.extend({
-      styles: (theme) => ({
+    SegmentedControl: {
+      styles: {
         root: {
           backgroundColor: 'var(--mantine-color-md-secondary-2)',
           borderRadius: 20,
@@ -1173,7 +1126,7 @@ export const materialTheme = createTheme({
           fontWeight: 500,
           fontSize: 14,
           color: 'var(--mantine-color-md-surface-8)',
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             backgroundColor: 'rgba(103,80,164,0.08)',
@@ -1182,21 +1135,21 @@ export const materialTheme = createTheme({
           '&[data-active]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
             color: 'white',
-            boxShadow: theme.other.mdElevation1,
+            boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    Chip: Chip.extend({
-      styles: (theme) => ({
+    Chip: {
+      styles: {
         root: {
           borderRadius: 8,
           border: '1px solid var(--mantine-color-md-secondary-4)',
           backgroundColor: 'transparent',
           fontSize: 14,
           color: 'var(--mantine-color-md-surface-8)',
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             backgroundColor: 'rgba(103,80,164,0.08)',
@@ -1209,11 +1162,11 @@ export const materialTheme = createTheme({
             color: 'var(--mantine-color-md-primary-7)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    Pill: Pill.extend({
-      styles: () => ({
+    Pill: {
+      styles: {
         root: {
           borderRadius: 16,
           backgroundColor: 'var(--mantine-color-md-secondary-2)',
@@ -1225,34 +1178,34 @@ export const materialTheme = createTheme({
           minHeight: 24,
           letterSpacing: 0.5,
         },
-      }),
-    }),
+      },
+    },
 
-    Paper: Paper.extend({
-      styles: (theme) => ({
+    Paper: {
+      styles: {
         root: {
-          backgroundColor: theme.other.mdSurfaceContainer,
+          backgroundColor: '#F3EDF7',
           borderRadius: 12,
           border: 'none',
 
           '&[data-variant="elevated"]': {
-            boxShadow: theme.other.mdElevation2,
-            backgroundColor: theme.other.mdSurfaceContainerLow,
+            boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
+            backgroundColor: '#F7F2FA',
           },
 
           '&[data-variant="outline"]': {
-            backgroundColor: theme.other.mdSurfaceContainerLowest,
+            backgroundColor: '#FFFFFF',
             border: '1px solid var(--mantine-color-md-surface-4)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    ThemeIcon: ThemeIcon.extend({
-      styles: (theme) => ({
+    ThemeIcon: {
+      styles: {
         root: {
           borderRadius: 20,
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&[data-variant="filled"]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
@@ -1270,11 +1223,11 @@ export const materialTheme = createTheme({
             color: 'var(--mantine-color-md-surface-8)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    Divider: Divider.extend({
-      styles: () => ({
+    Divider: {
+      styles: {
         root: {
           borderColor: 'var(--mantine-color-md-surface-4)',
         },
@@ -1284,17 +1237,17 @@ export const materialTheme = createTheme({
           fontSize: 14,
           fontWeight: 500,
         },
-      }),
-    }),
+      },
+    },
 
-    Accordion: Accordion.extend({
-      styles: (theme) => ({
+    Accordion: {
+      styles: {
         root: {
           backgroundColor: 'transparent',
         },
 
         item: {
-          backgroundColor: theme.other.mdSurfaceContainer,
+          backgroundColor: '#F3EDF7',
           borderRadius: 12,
           border: 'none',
           marginBottom: 8,
@@ -1307,7 +1260,7 @@ export const materialTheme = createTheme({
           fontWeight: 500,
           color: 'var(--mantine-color-md-surface-9)',
           padding: '16px 20px',
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             backgroundColor: 'rgba(103,80,164,0.08)',
@@ -1328,18 +1281,18 @@ export const materialTheme = createTheme({
         content: {
           padding: '0 20px 16px',
         },
-      }),
-    }),
+      },
+    },
 
-    Drawer: Drawer.extend({
-      styles: (theme) => ({
+    Drawer: {
+      styles: {
         overlay: {
           backgroundColor: 'rgba(0,0,0,0.32)',
           backdropFilter: 'blur(4px)',
         },
 
         content: {
-          backgroundColor: theme.other.mdSurfaceContainerHigh,
+          backgroundColor: '#ECE6F0',
           borderRadius: '28px 0 0 28px',
           border: 'none',
         },
@@ -1360,11 +1313,11 @@ export const materialTheme = createTheme({
           padding: '24px',
           color: 'var(--mantine-color-md-surface-8)',
         },
-      }),
-    }),
+      },
+    },
 
-    Tooltip: Tooltip.extend({
-      styles: (theme) => ({
+    Tooltip: {
+      styles: {
         tooltip: {
           backgroundColor: 'var(--mantine-color-md-surface-8)',
           color: 'white',
@@ -1372,29 +1325,29 @@ export const materialTheme = createTheme({
           fontSize: 12,
           fontWeight: 500,
           padding: '8px 12px',
-          boxShadow: theme.other.mdElevation2,
+          boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
         },
-      }),
-    }),
+      },
+    },
 
-    Popover: Popover.extend({
-      styles: (theme) => ({
+    Popover: {
+      styles: {
         dropdown: {
-          backgroundColor: theme.other.mdSurfaceContainer,
+          backgroundColor: '#F3EDF7',
           borderRadius: 12,
-          boxShadow: theme.other.mdElevation2,
+          boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
           border: 'none',
           padding: 8,
         },
-      }),
-    }),
+      },
+    },
 
-    Menu: Menu.extend({
-      styles: (theme) => ({
+    Menu: {
+      styles: {
         dropdown: {
-          backgroundColor: theme.other.mdSurfaceContainer,
+          backgroundColor: '#F3EDF7',
           borderRadius: 4,
-          boxShadow: theme.other.mdElevation2,
+          boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
           border: 'none',
           padding: 4,
         },
@@ -1403,7 +1356,7 @@ export const materialTheme = createTheme({
           fontSize: 16,
           borderRadius: 4,
           color: 'var(--mantine-color-md-surface-9)',
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             backgroundColor: 'rgba(103,80,164,0.08)',
@@ -1426,11 +1379,11 @@ export const materialTheme = createTheme({
           borderColor: 'var(--mantine-color-md-surface-4)',
           margin: '4px 0',
         },
-      }),
-    }),
+      },
+    },
 
-    Breadcrumbs: Breadcrumbs.extend({
-      styles: () => ({
+    Breadcrumbs: {
+      styles: {
         root: {
           fontSize: 14,
           color: 'var(--mantine-color-md-surface-7)',
@@ -1439,16 +1392,16 @@ export const materialTheme = createTheme({
         separator: {
           color: 'var(--mantine-color-md-surface-6)',
         },
-      }),
-    }),
+      },
+    },
 
-    Anchor: Anchor.extend({
-      styles: (theme) => ({
+    Anchor: {
+      styles: {
         root: {
           color: 'var(--mantine-color-md-primary-7)',
           fontSize: 16,
           textDecoration: 'none',
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             textDecoration: 'underline',
@@ -1459,11 +1412,11 @@ export const materialTheme = createTheme({
             color: 'var(--mantine-color-md-primary-8)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    List: List.extend({
-      styles: () => ({
+    List: {
+      styles: {
         root: {
           fontSize: 16,
           color: 'var(--mantine-color-md-surface-9)',
@@ -1478,11 +1431,11 @@ export const materialTheme = createTheme({
             color: 'var(--mantine-color-md-primary-7)',
           },
         },
-      }),
-    }),
+      },
+    },
 
-    Spotlight: Spotlight.extend({
-      styles: (theme) => ({
+    Spotlight: {
+      styles: {
         root: {
           '--spotlight-radius': '28px',
         },
@@ -1493,10 +1446,10 @@ export const materialTheme = createTheme({
         },
 
         content: {
-          background: theme.other.mdSurfaceContainerHigh,
+          background: '#ECE6F0',
           border: 'none',
           borderRadius: 28,
-          boxShadow: theme.other.mdElevation3,
+          boxShadow: '0px 1px 3px 0px rgba(0,0,0,0.3), 0px 4px 8px 3px rgba(0,0,0,0.15)',
           overflow: 'hidden',
         },
 
@@ -1509,7 +1462,7 @@ export const materialTheme = createTheme({
           fontSize: 16,
           fontWeight: 400,
           padding: '40px',
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&::placeholder': {
             color: 'var(--mantine-color-md-surface-7)',
@@ -1554,7 +1507,7 @@ export const materialTheme = createTheme({
           color: 'var(--mantine-color-md-surface-9)',
           margin: '2px 16px',
           padding: '12px 16px',
-          transition: `all ${theme.other.mdDurationShort3} ${theme.other.mdMotionStandard}`,
+          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
           '&:hover': {
             background: 'rgba(103,80,164,0.08)',
@@ -1588,7 +1541,7 @@ export const materialTheme = createTheme({
             height: 24,
           },
         },
-      }),
-    }),
+      },
+    },
   },
 });

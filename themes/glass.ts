@@ -1,43 +1,4 @@
-import {
-  createTheme,
-  Button,
-  Card,
-  TextInput,
-  Modal,
-  Progress,
-  Notification,
-  Textarea,
-  Select,
-  NumberInput,
-  PasswordInput,
-  ColorInput,
-  FileInput,
-  Avatar,
-  Text,
-  ActionIcon,
-  Radio,
-  Slider,
-  RangeSlider,
-  Rating,
-  Badge,
-  Loader,
-  Skeleton,
-  Accordion,
-  Drawer,
-  Tooltip,
-  Popover,
-  Menu,
-  SegmentedControl,
-  Chip,
-  Pill,
-  Breadcrumbs,
-  Anchor,
-  List,
-  Alert,
-  Title,
-} from '@mantine/core';
-import { DatePickerInput } from '@mantine/dates';
-import { Spotlight } from '@mantine/spotlight';
+import { createTheme } from '@mantine/core';
 
 export const glassTheme = createTheme({
   fontFamily: 'Inter, SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
@@ -61,7 +22,12 @@ export const glassTheme = createTheme({
     glassShadow: '0 8px 32px rgba(0,0,0,0.12)',
   },
   components: {
-    Button: Button.extend({
+    Button: {
+      defaultProps: {
+        color: 'teal',
+        radius: 'md',
+        size: 'lg'
+      },
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -129,17 +95,17 @@ export const glassTheme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    Text: Text.extend({
+    Text: {
       styles: {
         root: {
           color: 'white',
         },
       },
-    }),
+    },
 
-    Card: Card.extend({
+    Card: {
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -173,9 +139,9 @@ export const glassTheme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    TextInput: TextInput.extend({
+    TextInput: {
       styles: {
         input: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -227,9 +193,9 @@ export const glassTheme = createTheme({
           },
         }
       },
-    }),
+    },
 
-    Textarea: Textarea.extend({
+    Textarea: {
       styles: {
         input: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -255,9 +221,9 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
         }
       },
-    }),
+    },
 
-    Select: Select.extend({
+    Select: {
       styles: {
         input: {
           background: 'var(--glass-bg, rgba(255,255,255,0.08))',
@@ -333,7 +299,7 @@ export const glassTheme = createTheme({
         },
 
         option: {
-          '--_option-hover-background': 'transparent',         
+          '--_option-hover-background': 'transparent',
           '--_option-hover-color': 'var(--mantine-color-cyan-3)',
 
           color: 'rgba(255,255,255,0.9)',
@@ -373,9 +339,9 @@ export const glassTheme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    PasswordInput: PasswordInput.extend({
+    PasswordInput: {
       styles: {
         input: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -393,9 +359,9 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
         }
       },
-    }),
+    },
 
-    ColorInput: ColorInput.extend({
+    ColorInput: {
       styles: {
         input: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -413,9 +379,9 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
         }
       },
-    }),
+    },
 
-    FileInput: FileInput.extend({
+    FileInput: {
       styles: {
         input: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -433,17 +399,17 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
         }
       },
-    }),
+    },
 
-    Avatar: Avatar.extend({
+    Avatar: {
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
         },
       },
-    }),
+    },
 
-    DatePickerInput: DatePickerInput.extend({
+    DatePickerInput: {
       styles: {
         input: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -461,9 +427,9 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
         }
       },
-    }),
+    },
 
-    NumberInput: NumberInput.extend({
+    NumberInput: {
       styles: {
         input: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -476,9 +442,9 @@ export const glassTheme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    ActionIcon: ActionIcon.extend({
+    ActionIcon: {
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -512,9 +478,9 @@ export const glassTheme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    Modal: Modal.extend({
+    Modal: {
       styles: {
         content: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -559,9 +525,9 @@ export const glassTheme = createTheme({
           paddingTop: '10px'
         },
       },
-    }),
+    },
 
-    Progress: Progress.extend({
+    Progress: {
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -569,9 +535,9 @@ export const glassTheme = createTheme({
           overflow: 'hidden',
         },
       },
-    }),
+    },
 
-    Notification: Notification.extend({
+    Notification: {
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -582,9 +548,9 @@ export const glassTheme = createTheme({
           boxShadow: 'var(--glass-shadow,0 8px 32px rgba(0,0,0,0.12))',
         },
       },
-    }),
+    },
 
-    Radio: Radio.extend({
+    Radio: {
       styles: {
         radio: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -597,9 +563,9 @@ export const glassTheme = createTheme({
         },
         label: { color: 'rgba(255,255,255,0.9)', fontSize: 14 },
       },
-    }),
+    },
 
-    Slider: Slider.extend({
+    Slider: {
       styles: {
         track: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -611,9 +577,9 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
         },
       },
-    }),
+    },
 
-    RangeSlider: RangeSlider.extend({
+    RangeSlider: {
       styles: {
         track: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -625,17 +591,17 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
         },
       },
-    }),
+    },
 
-    Rating: Rating.extend({
+    Rating: {
       styles: {
         symbolBody: {
           color: '#FFD700',
         },
       },
-    }),
+    },
 
-    Badge: Badge.extend({
+    Badge: {
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -644,9 +610,9 @@ export const glassTheme = createTheme({
           color: 'white',
         },
       },
-    }),
+    },
 
-    Alert: Alert.extend({
+    Alert: {
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -656,26 +622,26 @@ export const glassTheme = createTheme({
         },
         title: { color: 'white', fontWeight: 600 },
       },
-    }),
+    },
 
-    Title: Title.extend({
+    Title: {
       styles: {
         root: {
           color: 'white',
           fontWeight: 700,
         },
       },
-    }),
+    },
 
-    Loader: Loader.extend({
+    Loader: {
       styles: {
         root: {
           color: 'var(--mantine-color-blue-5)',
         },
       },
-    }),
+    },
 
-    Skeleton: Skeleton.extend({
+    Skeleton: {
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -684,9 +650,9 @@ export const glassTheme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    SegmentedControl: SegmentedControl.extend({
+    SegmentedControl: {
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -701,9 +667,9 @@ export const glassTheme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    Chip: Chip.extend({
+    Chip: {
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -716,9 +682,9 @@ export const glassTheme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    Pill: Pill.extend({
+    Pill: {
       styles: {
         root: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -727,9 +693,9 @@ export const glassTheme = createTheme({
           color: 'white',
         },
       },
-    }),
+    },
 
-    Accordion: Accordion.extend({
+    Accordion: {
       styles: {
         control: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -747,9 +713,9 @@ export const glassTheme = createTheme({
           color: 'white',
         },
       },
-    }),
+    },
 
-    Drawer: Drawer.extend({
+    Drawer: {
       styles: {
         content: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -764,9 +730,9 @@ export const glassTheme = createTheme({
         },
         title: { color: 'white', fontWeight: 700 },
       },
-    }),
+    },
 
-    Tooltip: Tooltip.extend({
+    Tooltip: {
       styles: {
         tooltip: {
           background: 'var(--glass-bg,rgba(0,0,0,0.8))',
@@ -775,9 +741,9 @@ export const glassTheme = createTheme({
           color: 'white',
         },
       },
-    }),
+    },
 
-    Popover: Popover.extend({
+    Popover: {
       styles: {
         dropdown: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -786,9 +752,9 @@ export const glassTheme = createTheme({
           color: 'white',
         },
       },
-    }),
+    },
 
-    Menu: Menu.extend({
+    Menu: {
       styles: {
         dropdown: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
@@ -807,17 +773,17 @@ export const glassTheme = createTheme({
           fontWeight: 600,
         },
       },
-    }),
+    },
 
-    Breadcrumbs: Breadcrumbs.extend({
+    Breadcrumbs: {
       styles: {
         root: {
           color: 'rgba(255,255,255,0.9)',
         },
       },
-    }),
+    },
 
-    Anchor: Anchor.extend({
+    Anchor: {
       styles: {
         root: {
           color: 'var(--mantine-color-blue-4)',
@@ -826,9 +792,9 @@ export const glassTheme = createTheme({
           },
         },
       },
-    }),
+    },
 
-    List: List.extend({
+    List: {
       styles: {
         root: {
           color: 'rgba(255,255,255,0.9)',
@@ -837,9 +803,9 @@ export const glassTheme = createTheme({
           color: 'rgba(255,255,255,0.9)',
         },
       },
-    }),
+    },
 
-    Spotlight: Spotlight.extend({
+    Spotlight: {
       styles: {
         root: {
           '--spotlight-radius': '16px',
@@ -946,6 +912,6 @@ export const glassTheme = createTheme({
           },
         },
       },
-    }),
+    },
   },
 });
