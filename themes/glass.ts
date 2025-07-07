@@ -142,84 +142,78 @@ export const glassTheme = createTheme({
     },
 
     TextInput: {
+      defaultProps: {
+        radius: 'md',
+        size: 'lg',
+        placeholder: ' ',
+      },
+
       styles: {
+        root: {
+          position: 'relative',
+          width: '100%',
+          '&:has(input:focus) label, &:has(input:not(:placeholder-shown)) label': {
+            top: '-0.45rem !important',
+            transform: 'translateY(0) !important',
+            fontSize: '0.75rem !important',
+            color: 'var(--mantine-color-blue-4) !important',
+            paddingInline: '0.25rem',
+            background: 'var(--glass-bg,rgba(255,255,255,0.08))',
+          },
+
+          '&[data-with-left-section] label': { left: '2.75rem' },
+
+          '&[data-invalid] label': { color: 'var(--mantine-color-error) !important' },
+        },
+
         input: {
+          width: '100%',
+          height: '3.75rem',
+          padding: '1.25rem 1rem 0.5rem 3.5rem',
+          '::placeholder': { color: 'transparent' },
+          fontSize: '1.125rem',
+          borderRadius: 'var(--mantine-radius-md)',
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
           backdropFilter: 'var(--glass-blur,blur(24px))',
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
           color: 'white',
-          fontSize: 14,
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-          borderRadius: 10,
-          '&::placeholder': {
-            color: 'rgba(255,255,255,0.5)',
-            transition: 'color 0.3s ease',
-          },
-          '&:hover': {
-            background: 'rgba(255,255,255,0.12)',
-            borderColor: 'rgba(255,255,255,0.3)',
-            transform: 'translateY(-1px)',
-            boxShadow: '0 6px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1)',
-            '&::placeholder': {
-              color: 'rgba(255,255,255,0.7)',
-            },
-          },
-          '&:focus': {
-            borderColor: 'var(--mantine-color-blue-4)',
-            background: 'rgba(255,255,255,0.15)',
-            boxShadow: '0 0 0 3px rgba(56,189,248,0.3), 0 10px 30px rgba(0,0,0,0.2)',
-            transform: 'translateY(-2px)',
-          },
-          '&[data-with-left-section]': {
-            paddingLeft: '2.5rem',
-          },
+          outline: 'none',
+          transition: 'border-color 0.18s ease',
+
+          '&:hover': { borderColor: 'rgba(255,255,255,0.30)' },
+          '&:focus': { borderColor: 'var(--mantine-color-blue-4)' },
+          '&[data-invalid]': { borderColor: 'var(--mantine-color-error)' },
+
+          '&[data-with-left-section]': { paddingLeft: '2.75rem' },
         },
+
         label: {
-          color: 'rgba(255,255,255,0.9)',
-          fontWeight: 600,
-          fontSize: 13,
-          textShadow: '0 1px 2px rgba(0,0,0,0.3)',
-          transition: 'all 0.3s ease',
+          position: 'absolute',
+          left: '3.5rem',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          padding: '0 0.25rem',
+          fontSize: '1.125rem',
+          lineHeight: 1,
+          color: 'rgba(255,255,255,0.7)',
+          background: 'var(--glass-bg,rgba(255,255,255,0.08))',
+          pointerEvents: 'none',
+          transition: 'top 0.18s ease, transform 0.18s ease, font-size 0.18s ease, color 0.18s ease',
+          zIndex: 2,
         },
+
         section: {
           background: 'var(--glass-bg,rgba(255,255,255,0.08))',
           backdropFilter: 'var(--glass-blur,blur(24px))',
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-          borderRadius: 8,
+          borderRadius: '0.5rem',
+          transition: 'background 0.3s cubic-bezier(0.4,0,0.2,1), border-color 0.3s',
+
           '&:hover': {
             background: 'rgba(255,255,255,0.15)',
-            borderColor: 'rgba(255,255,255,0.3)',
-          },
-        }
-      },
-    },
-
-    Textarea: {
-      styles: {
-        input: {
-          background: 'var(--glass-bg,rgba(255,255,255,0.08))',
-          backdropFilter: 'var(--glass-blur,blur(24px))',
-          border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
-          color: 'white',
-          fontSize: 14,
-          minHeight: '120px',
-          resize: 'vertical',
-          '&::placeholder': { color: 'rgba(255,255,255,0.5)' },
-          '&:focus': {
-            borderColor: 'var(--mantine-color-blue-5)',
-            boxShadow: '0 0 0 3px rgba(56,189,248,0.2)',
-          },
-          '&[data-with-left-section]': {
-            paddingLeft: '2.5rem',
+            borderColor: 'rgba(255,255,255,0.30)',
           },
         },
-        label: { color: 'rgba(255,255,255,0.9)', fontWeight: 600, fontSize: 13 },
-         section: {
-          background: 'var(--glass-bg,rgba(255,255,255,0.08))',
-          backdropFilter: 'var(--glass-blur,blur(24px))',
-          border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
-        }
       },
     },
 
@@ -440,6 +434,66 @@ export const glassTheme = createTheme({
           '&[data-with-left-section]': {
             paddingLeft: '28px',
           },
+        },
+      },
+    },
+
+    Textarea: {
+      defaultProps: {
+        radius: 'md',
+        size: 'lg',
+        placeholder: ' ',
+      },
+
+      styles: {
+        root: {
+          position: 'relative',
+          width: '100%',
+          '&:has(textarea:focus) label, &:has(textarea:not(:placeholder-shown)) label': {
+            top: '-0.45rem !important',
+            transform: 'translateY(0) !important',
+            fontSize: '0.75rem !important',
+            color: 'var(--mantine-color-blue-4) !important',
+            paddingInline: '0.25rem',
+            background: 'var(--glass-bg,rgba(255,255,255,0.08))',
+          },
+
+          '&[data-invalid] label': { color: 'var(--mantine-color-error) !important' },
+        },
+
+        input: {
+          width: '100%',
+          minHeight: '7.5rem',
+          padding: '1.25rem 1rem 0.5rem 1.25rem',
+          '::placeholder': { color: 'transparent' },
+          fontSize: '1.125rem',
+          borderRadius: 'var(--mantine-radius-md)',
+          background: 'var(--glass-bg,rgba(255,255,255,0.08))',
+          backdropFilter: 'var(--glass-blur,blur(24px))',
+          border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
+          color: 'white',
+          outline: 'none',
+          transition: 'border-color 0.18s ease',
+          resize: 'vertical',
+
+          '&:hover': { borderColor: 'rgba(255,255,255,0.30)' },
+          '&:focus': { borderColor: 'var(--mantine-color-blue-4)' },
+          '&[data-invalid]': { borderColor: 'var(--mantine-color-error)' },
+        },
+
+        label: {
+          position: 'absolute',
+          left: '1.25rem',
+          top: '1.25rem',
+          transform: 'translateY(0)',
+          padding: '0 0.25rem',
+          fontSize: '1.125rem',
+          lineHeight: 1,
+          color: 'rgba(255,255,255,0.7)',
+          background: 'var(--glass-bg,rgba(255,255,255,0.08))',
+          pointerEvents: 'none',
+          transition: 'top 0.18s ease, transform 0.18s ease, font-size 0.18s ease, color 0.18s ease',
+          zIndex: 2,
         },
       },
     },

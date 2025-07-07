@@ -88,7 +88,6 @@ export const materialTheme = createTheme({
           transition: 'all 200ms cubic-bezier(0.2, 0, 0, 1)',
           textTransform: 'none',
 
-          // State layer overlay
           '&::before': {
             content: '""',
             position: 'absolute',
@@ -99,12 +98,10 @@ export const materialTheme = createTheme({
             borderRadius: 'inherit',
           },
 
-          // Hover states
           '&:hover::before': { opacity: 0.08 },
           '&:focus-visible::before': { opacity: 0.12 },
           '&:active::before': { opacity: 0.16 },
 
-          // Filled variant (Primary button)
           '&[data-variant="filled"]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
             color: 'white',
@@ -127,7 +124,6 @@ export const materialTheme = createTheme({
             },
           },
 
-          // Outlined variant (Secondary button)
           '&[data-variant="outline"]': {
             backgroundColor: 'transparent',
             color: 'var(--mantine-color-md-primary-7)',
@@ -143,7 +139,6 @@ export const materialTheme = createTheme({
             },
           },
 
-          // Text variant (Tertiary button)
           '&[data-variant="subtle"]': {
             backgroundColor: 'transparent',
             color: 'var(--mantine-color-md-primary-7)',
@@ -157,7 +152,6 @@ export const materialTheme = createTheme({
             },
           },
 
-          // Light variant (Tonal button)
           '&[data-variant="light"]': {
             backgroundColor: 'var(--mantine-color-md-secondary-2)',
             color: 'var(--mantine-color-md-primary-7)',
@@ -174,7 +168,6 @@ export const materialTheme = createTheme({
           },
         },
 
-        // Icon styling
         leftIcon: {
           marginRight: 8,
         },
@@ -199,7 +192,6 @@ export const materialTheme = createTheme({
             transform: 'translateY(-2px)',
           },
 
-          // Elevated card variant
           '&[data-variant="elevated"]': {
             backgroundColor: '#F7F2FA',
             boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
@@ -209,7 +201,6 @@ export const materialTheme = createTheme({
             },
           },
 
-          // Filled card variant
           '&[data-variant="filled"]': {
             backgroundColor: '#E6E0E9',
             boxShadow: 'none',
@@ -219,7 +210,6 @@ export const materialTheme = createTheme({
             },
           },
 
-          // Outlined card variant
           '&[data-variant="outline"]': {
             backgroundColor: '#FFFFFF',
             border: '1px solid var(--mantine-color-md-surface-4)',
@@ -247,43 +237,37 @@ export const materialTheme = createTheme({
 
     TextInput: {
       styles: {
-        wrapper: {
+        root: {
           position: 'relative',
-        },
-
-        label: {
-          fontSize: 12,
-          fontWeight: 500,
-          color: 'var(--mantine-color-md-surface-9)',
-          marginBottom: 4,
-          letterSpacing: 0.4,
+          width: '100%',
+          '&:has(input:focus) label, &:has(input:not(:placeholder-shown)) label': {
+            top: '-0.45rem !important',
+            transform: 'translateY(0) !important',
+            fontSize: '0.75rem !important',
+            color: 'var(--mantine-color-md-primary-7) !important',
+          },
+          '&[data-invalid] label': {
+            color: 'var(--mantine-color-md-error-6) !important',
+          },
         },
 
         input: {
-          borderRadius: 4,
-          border: '1px solid #79747E',
-          fontSize: 16,
-          lineHeight: '24px',
-          padding: '16px 30px',
+          width: '100%',
+          height: '3.75rem',
+          padding: '1.25rem 1.5rem 0.5rem 2rem',
+          fontSize: '1.125rem',
+          borderRadius: 'var(--mantine-radius-md)',
           backgroundColor: '#FFFFFF',
-          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
-
-          '&::placeholder': {
-            color: 'rgba(73,69,79,0.6)',
-            fontSize: 16,
-          },
+          transition: 'outline-color 0.18s ease, border-color 0.18s ease',
+          border: '1px solid #79747E',
+          outline: 'none',
 
           '&:hover': {
             borderColor: '#49454F',
-            backgroundColor: '#F7F2FA',
           },
 
           '&:focus': {
             borderColor: 'var(--mantine-color-md-primary-7)',
-            borderWidth: 2,
-            outline: 0,
-            backgroundColor: '#FFFFFF',
-            boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
           '&:disabled': {
@@ -296,7 +280,6 @@ export const materialTheme = createTheme({
             borderColor: 'var(--mantine-color-md-error-6)',
             '&:focus': {
               borderColor: 'var(--mantine-color-md-error-6)',
-              boxShadow: '0 0 0 1px var(--mantine-color-md-error-6)',
             },
           },
 
@@ -306,6 +289,21 @@ export const materialTheme = createTheme({
           '&[data-with-right-section]': {
             paddingRight: '44px',
           },
+        },
+
+        label: {
+          position: 'absolute',
+          left: '2rem',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          padding: '0 0.25rem',
+          fontSize: '1rem',
+          lineHeight: 1,
+          color: 'rgba(73,69,79,0.6)',
+          backgroundColor: '#FFFFFF',
+          pointerEvents: 'none',
+          transition: 'top 0.18s ease, transform 0.18s ease, font-size 0.18s ease, color 0.18s ease',
+          zIndex: 2,
         },
 
         error: {
@@ -729,43 +727,38 @@ export const materialTheme = createTheme({
 
     Textarea: {
       styles: {
-        wrapper: { position: 'relative' },
-
-        label: {
-          fontSize: 12,
-          fontWeight: 500,
-          color: 'var(--mantine-color-md-surface-9)',
-          marginBottom: 4,
-          letterSpacing: 0.4,
+        root: {
+          position: 'relative',
+          width: '100%',
+          '&:has(textarea:focus) label, &:has(textarea:not(:placeholder-shown)) label': {
+            top: '-0.45rem !important',
+            transform: 'translateY(0) !important',
+            fontSize: '0.75rem !important',
+            color: 'var(--mantine-color-md-primary-7) !important',
+          },
+          '&[data-invalid] label': {
+            color: 'var(--mantine-color-md-error-6) !important',
+          },
         },
 
         input: {
-          borderRadius: 4,
-          border: '1px solid #79747E',
-          fontSize: 16,
-          lineHeight: '24px',
-          minHeight: '80px',
-          resize: 'vertical',
-          padding: '16px',
+          width: '100%',
+          minHeight: '120px',
+          padding: '1.25rem 1rem 0.5rem 1.25rem',
+          fontSize: '1.125rem',
+          borderRadius: 'var(--mantine-radius-md)',
           backgroundColor: '#FFFFFF',
-          transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
-
-          '&::placeholder': {
-            color: 'rgba(73,69,79,0.6)',
-            fontSize: 16,
-          },
+          transition: 'outline-color 0.18s ease, border-color 0.18s ease',
+          border: '1px solid #79747E',
+          outline: 'none',
+          resize: 'vertical',
 
           '&:hover': {
             borderColor: '#49454F',
-            backgroundColor: '#F7F2FA',
           },
 
           '&:focus': {
             borderColor: 'var(--mantine-color-md-primary-7)',
-            borderWidth: 2,
-            outline: 0,
-            backgroundColor: '#FFFFFF',
-            boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
           '&:disabled': {
@@ -773,6 +766,21 @@ export const materialTheme = createTheme({
             borderColor: 'rgba(29,27,32,0.12)',
             color: 'rgba(29,27,32,0.38)',
           },
+        },
+
+        label: {
+          position: 'absolute',
+          left: '1.25rem',
+          top: '1.25rem',
+          transform: 'translateY(0)',
+          padding: '0 0.25rem',
+          fontSize: '1rem',
+          lineHeight: 1,
+          color: 'rgba(73,69,79,0.6)',
+          backgroundColor: '#FFFFFF',
+          pointerEvents: 'none',
+          transition: 'top 0.18s ease, transform 0.18s ease, font-size 0.18s ease, color 0.18s ease',
+          zIndex: 2,
         },
       },
     },

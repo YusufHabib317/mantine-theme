@@ -30,6 +30,7 @@ export default function ContactForm() {
                 label="Last Name"
                 value={formData.lastName}
                 onChange={(e) => setFormData({...formData, lastName: e.target.value})}
+                classNames={textInputClasses}
                 placeholder=" "
               />
             </Group>
@@ -38,14 +39,16 @@ export default function ContactForm() {
               label="Phone"
               value={formData.phone}
               onChange={(e) => setFormData({...formData, phone: e.target.value})}
+              classNames={textInputClasses}
               placeholder=" "
             />
-    
+
             <TextInput
               label="Email"
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
+              classNames={textInputClasses}
               placeholder=" "
             />
 

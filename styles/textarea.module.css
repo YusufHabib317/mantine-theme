@@ -7,15 +7,13 @@
   pointer-events: none !important;
   z-index: 2 !important;
   transition: all 0.18s ease !important;
-  /* Let theme handle background - don't override */
 }
 
-.root:has(input:focus) .label,
-.root:has(input:not(:placeholder-shown)) .label {
+.root:has(textarea:focus) .label,
+.root:has(textarea:not(:placeholder-shown)) .label {
   top: -0.45rem !important;
   transform: translateY(0) !important;
   font-size: 0.75rem !important;
-  /* Background handled by theme for proper glass/material effect */
 }
 
 .root:focus-within .label {
@@ -23,4 +21,3 @@
   transform: translateY(0) !important;
   font-size: 0.75rem !important;
 }
-  

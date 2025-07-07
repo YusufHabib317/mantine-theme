@@ -73,19 +73,54 @@ export const windows95Theme = createTheme({
 
     TextInput: {
       styles: {
+        root: {
+          position: 'relative',
+          width: '100%',
+          '&:has(input:focus) label, &:has(input:not(:placeholder-shown)) label': {
+            top: '-0.45rem !important',
+            transform: 'translateY(0) !important',
+            fontSize: '0.75rem !important',
+            color: 'black !important',
+          },
+          '&[data-invalid] label': {
+            color: 'var(--mantine-color-red-6) !important',
+          },
+        },
         input: {
-          border: '2px inset #C0C0C0',
+          width: '100%',
+          height: '3.75rem',
+          padding: '1.25rem 1rem 0.5rem 2.5rem',
+          fontSize: '1.125rem',
+          borderRadius: 'var(--mantine-radius-md)',
           backgroundColor: 'white',
-          padding: '2px 40px',
+          transition: 'outline-color 0.18s ease, border-color 0.18s ease',
+          border: '2px inset #C0C0C0',
+          outline: 'none',
           fontFamily: 'inherit',
-          fontSize: 11,
           boxShadow: 'inset 1px 1px 0 #808080, inset -1px -1px 0 #FFFFFF',
-          '&:focus-visible': {
+          '&:hover': {
+            borderColor: '#A0A0A0',
+          },
+          '&:focus': {
             outline: '1px dotted black',
             outlineOffset: -3,
           },
         },
-        label: { fontSize: 11, marginBottom: 2 },
+        label: {
+          position: 'absolute',
+          left: '2.5rem',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          padding: '0 0.25rem',
+          fontSize: '1rem',
+          lineHeight: 1,
+          color: '#808080',
+          backgroundColor: 'white',
+          pointerEvents: 'none',
+          transition: 'top 0.18s ease, transform 0.18s ease, font-size 0.18s ease, color 0.18s ease',
+          zIndex: 2,
+          fontFamily: 'inherit',
+        },
         section: {
           border: '2px outset #C0C0C0',
           backgroundColor: 'var(--mantine-color-gray-5)',
@@ -265,17 +300,55 @@ export const windows95Theme = createTheme({
 
     Textarea: {
       styles: {
-        input: {
-          border: '2px inset #C0C0C0',
-          backgroundColor: 'white',
-          padding: '2px 4px',
-          fontFamily: 'inherit',
-          fontSize: 11,
-          boxShadow: 'inset 1px 1px 0 #808080, inset -1px -1px 0 #FFFFFF',
-          minHeight: '60px',
-          resize: 'vertical',
+        root: {
+          position: 'relative',
+          width: '100%',
+          '&:has(textarea:focus) label, &:has(textarea:not(:placeholder-shown)) label': {
+            top: '-0.45rem !important',
+            transform: 'translateY(0) !important',
+            fontSize: '0.75rem !important',
+            color: 'black !important',
+          },
+          '&[data-invalid] label': {
+            color: 'var(--mantine-color-red-6) !important',
+          },
         },
-        label: { fontSize: 11, marginBottom: 2 },
+        input: {
+          width: '100%',
+          minHeight: '120px',
+          padding: '1.25rem 1rem 0.5rem 1.25rem',
+          fontSize: '1.125rem',
+          borderRadius: 'var(--mantine-radius-md)',
+          backgroundColor: 'white',
+          transition: 'outline-color 0.18s ease, border-color 0.18s ease',
+          border: '2px inset #C0C0C0',
+          outline: 'none',
+          fontFamily: 'inherit',
+          boxShadow: 'inset 1px 1px 0 #808080, inset -1px -1px 0 #FFFFFF',
+          resize: 'vertical',
+          '&:hover': {
+            borderColor: '#A0A0A0',
+          },
+          '&:focus': {
+            outline: '1px dotted black',
+            outlineOffset: -3,
+          },
+        },
+        label: {
+          position: 'absolute',
+          left: '1.25rem',
+          top: '1.25rem',
+          transform: 'translateY(0)',
+          padding: '0 0.25rem',
+          fontSize: '1rem',
+          lineHeight: 1,
+          color: '#808080',
+          backgroundColor: 'white',
+          pointerEvents: 'none',
+          transition: 'top 0.18s ease, transform 0.18s ease, font-size 0.18s ease, color 0.18s ease',
+          zIndex: 2,
+          fontFamily: 'inherit',
+        },
       },
     },
 

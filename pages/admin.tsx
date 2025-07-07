@@ -78,6 +78,9 @@ import { ThemeSwitcher } from '../src/components/ThemeSwitcher';
 import { useTheme } from '../src/contexts/ThemeContext';
 import { themeBackgrounds, themeHeaders } from '../theme';
 import SelectWithFlags from '../src/components/select-with-flags/optimized-select-with-flags';
+// import classes from '../styles/TextInputFloating.module.css';
+import classes from '../styles/textInput.module.css';
+import textareaClasses from '../styles/textarea.module.css';
 
 export default function AdminDashboard() {
   const { currentTheme } = useTheme();
@@ -311,15 +314,17 @@ export default function AdminDashboard() {
                         <form onSubmit={form.onSubmit((values) => console.log(values))}>
                           <Stack gap="md">
                             <TextInput
-                              label="Full Name"
-                              placeholder="Enter your name"
-                              leftSection={<IconUser size={16} />}
-                              {...form.getInputProps('name')}
+                             label="Full Name"
+                             placeholder=" "
+                             leftSection={<IconUser size={16} />}
+                             classNames={{ root: classes.root, input: classes.input, label: classes.label }}
+                             {...form.getInputProps('name')}
                             />
                             <TextInput
                               label="Email"
-                              placeholder="your@email.com"
+                              placeholder=" "
                               leftSection={<IconMail size={16} />}
+                              classNames={{ root: classes.root, input: classes.input, label: classes.label }}
                               {...form.getInputProps('email')}
                             />
                             <PasswordInput
@@ -348,8 +353,9 @@ export default function AdminDashboard() {
                             />
                             <Textarea
                               label="Bio"
-                              placeholder="Tell us about yourself"
+                              placeholder=" "
                               rows={3}
+                              classNames={{ root: textareaClasses.root, input: textareaClasses.input, label: textareaClasses.label }}
                               {...form.getInputProps('bio')}
                             />
                             <ColorInput
