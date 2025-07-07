@@ -76,7 +76,7 @@ export const glassTheme = createTheme({
             transform: 'translateY(-2px) scale(1.02)',
             boxShadow: '0 8px 25px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.15)',
           },
-          '&[data-variant="filled"]': {
+          '&[dataVariant="filled"]': {
             background: 'linear-gradient(135deg, rgba(56,189,248,0.3), rgba(147,51,234,0.3))',
             borderColor: 'rgba(56,189,248,0.4)',
             '&:hover': {
@@ -85,7 +85,7 @@ export const glassTheme = createTheme({
               boxShadow: '0 15px 45px rgba(56,189,248,0.2), 0 0 0 1px rgba(56,189,248,0.3)',
             },
           },
-          '&[data-variant="outline"]': {
+          '&[dataVariant="outline"]': {
             background: 'transparent',
             borderColor: 'rgba(255,255,255,0.3)',
             '&:hover': {
@@ -152,18 +152,6 @@ export const glassTheme = createTheme({
         root: {
           position: 'relative',
           width: '100%',
-          '&:has(input:focus) label, &:has(input:not(:placeholder-shown)) label': {
-            top: '-0.45rem !important',
-            transform: 'translateY(0) !important',
-            fontSize: '0.75rem !important',
-            color: 'var(--mantine-color-blue-4) !important',
-            paddingInline: '0.25rem',
-            background: 'var(--glass-bg,rgba(255,255,255,0.08))',
-          },
-
-          '&[data-with-left-section] label': { left: '2.75rem' },
-
-          '&[data-invalid] label': { color: 'var(--mantine-color-error) !important' },
         },
 
         input: {
@@ -182,9 +170,9 @@ export const glassTheme = createTheme({
 
           '&:hover': { borderColor: 'rgba(255,255,255,0.30)' },
           '&:focus': { borderColor: 'var(--mantine-color-blue-4)' },
-          '&[data-invalid]': { borderColor: 'var(--mantine-color-error)' },
+          '&[dataInvalid]': { borderColor: 'var(--mantine-color-error)' },
 
-          '&[data-with-left-section]': { paddingLeft: '2.75rem' },
+          '&[dataWithLeftSection]': { paddingLeft: '2.75rem' },
         },
 
         label: {
@@ -260,7 +248,7 @@ export const glassTheme = createTheme({
             transform: 'translateY(-3px) scale(1.02)',
           },
 
-          '&[data-with-left-section]': { paddingLeft: 28 },
+          '&[dataWithLeftSection]': { paddingLeft: 28 },
         },
 
         section: {
@@ -304,11 +292,11 @@ export const glassTheme = createTheme({
           margin: '2px 6px',
           transition: 'color 0.2s ease',
 
-          '&:hover, &[data-hovered]': {
+          '&:hover, &[dataHovered]': {
             color: 'var(--_option-hover-color)',
           },
 
-          '&[data-selected]': {
+          '&[dataSelected]': {
             background:
               'linear-gradient(135deg, rgba(56,189,248,0.35), rgba(147,51,234,0.35))',
             color: 'white',
@@ -343,7 +331,7 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
           color: 'white',
           fontSize: 14,
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '28px',
           },
         },
@@ -363,7 +351,7 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
           color: 'white',
           fontSize: 14,
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '28px',
           },
         },
@@ -383,7 +371,7 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
           color: 'white',
           fontSize: 14,
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '28px',
           },
         },
@@ -411,7 +399,7 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
           color: 'white',
           fontSize: 14,
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '35px',
           },
         },
@@ -431,7 +419,7 @@ export const glassTheme = createTheme({
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
           color: 'white',
           fontSize: 14,
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '28px',
           },
         },
@@ -449,16 +437,6 @@ export const glassTheme = createTheme({
         root: {
           position: 'relative',
           width: '100%',
-          '&:has(textarea:focus) label, &:has(textarea:not(:placeholder-shown)) label': {
-            top: '-0.45rem !important',
-            transform: 'translateY(0) !important',
-            fontSize: '0.75rem !important',
-            color: 'var(--mantine-color-blue-4) !important',
-            paddingInline: '0.25rem',
-            background: 'var(--glass-bg,rgba(255,255,255,0.08))',
-          },
-
-          '&[data-invalid] label': { color: 'var(--mantine-color-error) !important' },
         },
 
         input: {
@@ -478,7 +456,7 @@ export const glassTheme = createTheme({
 
           '&:hover': { borderColor: 'rgba(255,255,255,0.30)' },
           '&:focus': { borderColor: 'var(--mantine-color-blue-4)' },
-          '&[data-invalid]': { borderColor: 'var(--mantine-color-error)' },
+          '&[dataInvalid]': { borderColor: 'var(--mantine-color-error)' },
         },
 
         label: {
@@ -576,7 +554,6 @@ export const glassTheme = createTheme({
         },
         body: {
           color: 'rgba(255,255,255,0.9)',
-          paddingTop: '10px'
         },
       },
     },
@@ -715,7 +692,7 @@ export const glassTheme = createTheme({
         },
         control: {
           color: 'rgba(255,255,255,0.7)',
-          '&[data-active]': {
+          '&[dataActive]': {
             background: 'rgba(255,255,255,0.15)',
             color: 'white',
           },
@@ -730,7 +707,7 @@ export const glassTheme = createTheme({
           backdropFilter: 'var(--glass-blur,blur(24px))',
           border: 'var(--glass-border,1px solid rgba(255,255,255,0.18))',
           color: 'rgba(255,255,255,0.7)',
-          '&[data-checked]': {
+          '&[dataChecked]': {
             background: 'rgba(255,255,255,0.15)',
             color: 'white',
           },
@@ -906,15 +883,15 @@ export const glassTheme = createTheme({
           maxHeight: '400px',
           overflowY: 'auto',
 
-          '&::-webkit-scrollbar': {
+          '&::WebkitScrollba': {
             width: '6px',
           },
 
-          '&::-webkit-scrollbar-track': {
+          '&::WebkitScrollbaTrack': {
             background: 'rgba(255,255,255,0.05)',
           },
 
-          '&::-webkit-scrollbar-thumb': {
+          '&::WebkitScrollbaThumb': {
             background: 'rgba(255,255,255,0.2)',
             borderRadius: '3px',
 
@@ -938,7 +915,7 @@ export const glassTheme = createTheme({
             transform: 'translateX(4px)',
           },
 
-          '&[data-selected]': {
+          '&[dataSelected]': {
             background: 'rgba(56,189,248,0.2)',
             borderLeft: '3px solid var(--mantine-color-blue-4)',
             transform: 'translateX(4px)',

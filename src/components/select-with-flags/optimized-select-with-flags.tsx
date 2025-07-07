@@ -74,9 +74,11 @@ const SelectWithFlags = memo(
         limit={100}
         {...props}
         data={data}
-        styles={{ input: props.value ? { paddingLeft: '2.5rem' } : undefined }}
         renderOption={({ option }) => <OptionRenderer option={option} />}
         leftSection={leftSection}
+        styles={{
+          input: props.value ? { paddingLeft: '2.5rem' } : undefined,
+        }}
       />
     );
   }

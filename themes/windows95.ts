@@ -48,11 +48,11 @@ export const windows95Theme = createTheme({
             boxShadow: 'inset 1px 1px 0 #808080, inset -1px -1px 0 #FFFFFF',
             transform: 'translate(1px,1px)',
           },
-          '&[data-disabled]': {
+          '&[dataDisabled]': {
             color: '#808080',
             textShadow: '1px 1px 0 #FFFFFF',
           },
-          '&[data-variant="filled"]': {
+          '&[dataVariant="filled"]': {
             backgroundColor: 'var(--mantine-color-blue-6)',
             borderColor: 'var(--mantine-color-blue-6)',
           },
@@ -76,15 +76,6 @@ export const windows95Theme = createTheme({
         root: {
           position: 'relative',
           width: '100%',
-          '&:has(input:focus) label, &:has(input:not(:placeholder-shown)) label': {
-            top: '-0.45rem !important',
-            transform: 'translateY(0) !important',
-            fontSize: '0.75rem !important',
-            color: 'black !important',
-          },
-          '&[data-invalid] label': {
-            color: 'var(--mantine-color-red-6) !important',
-          },
         },
         input: {
           width: '100%',
@@ -170,7 +161,7 @@ export const windows95Theme = createTheme({
           borderBottom: 0,
           fontSize: 11,
           padding: '4px 12px',
-          '&[data-active]': {
+          '&[dataActive]': {
             backgroundColor: 'white',
             borderBottom: '2px solid white',
             zIndex: 1,
@@ -208,7 +199,7 @@ export const windows95Theme = createTheme({
           fontFamily: 'inherit',
           fontSize: 11,
           boxShadow: 'inset 1px 1px 0 #808080, inset -1px -1px 0 #FFFFFF',
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '28px',
           },
         },
@@ -223,7 +214,7 @@ export const windows95Theme = createTheme({
           fontFamily: 'inherit',
           fontSize: 11,
           boxShadow: 'inset 1px 1px 0 #808080, inset -1px -1px 0 #FFFFFF',
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '28px',
           },
         },
@@ -238,7 +229,7 @@ export const windows95Theme = createTheme({
           fontFamily: 'inherit',
           fontSize: 11,
           boxShadow: 'inset 1px 1px 0 #808080, inset -1px -1px 0 #FFFFFF',
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '28px',
           },
         },
@@ -253,7 +244,7 @@ export const windows95Theme = createTheme({
           fontFamily: 'inherit',
           fontSize: 11,
           boxShadow: 'inset 1px 1px 0 #808080, inset -1px -1px 0 #FFFFFF',
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '28px',
           },
         },
@@ -277,7 +268,7 @@ export const windows95Theme = createTheme({
           fontFamily: 'inherit',
           fontSize: 11,
           boxShadow: 'inset 1px 1px 0 #808080, inset -1px -1px 0 #FFFFFF',
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '28px',
           },
         },
@@ -303,15 +294,6 @@ export const windows95Theme = createTheme({
         root: {
           position: 'relative',
           width: '100%',
-          '&:has(textarea:focus) label, &:has(textarea:not(:placeholder-shown)) label': {
-            top: '-0.45rem !important',
-            transform: 'translateY(0) !important',
-            fontSize: '0.75rem !important',
-            color: 'black !important',
-          },
-          '&[data-invalid] label': {
-            color: 'var(--mantine-color-red-6) !important',
-          },
         },
         input: {
           width: '100%',
@@ -497,7 +479,7 @@ export const windows95Theme = createTheme({
           border: '1px outset #C0C0C0',
           backgroundColor: 'var(--mantine-color-gray-5)',
           fontSize: 11,
-          '&[data-active]': {
+          '&[dataActive]': {
             border: '2px inset #C0C0C0',
             backgroundColor: 'white',
           },
@@ -511,7 +493,7 @@ export const windows95Theme = createTheme({
           border: '2px outset #C0C0C0',
           backgroundColor: 'var(--mantine-color-gray-5)',
           fontSize: 10,
-          '&[data-checked]': {
+          '&[dataChecked]': {
             border: '2px inset #C0C0C0',
             backgroundColor: 'white',
           },
@@ -739,7 +721,7 @@ export const windows95Theme = createTheme({
             color: 'white',
           },
 
-          '&[data-selected]': {
+          '&[dataSelected]': {
             background: '#0000FF',
             color: 'white',
           },

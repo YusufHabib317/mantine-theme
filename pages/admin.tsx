@@ -103,6 +103,10 @@ export default function AdminDashboard() {
       age: 18,
       bio: '',
       country: '',
+      phoneCountryCode: '',
+      priorityCountry: '',
+      europeanCountry: '',
+      blacklistCountry: '',
       newsletter: false,
       role: '',
       color: '#3DADFF',
@@ -269,7 +273,7 @@ export default function AdminDashboard() {
                   </Tabs.Tab>
                 </Tabs.List>
 
-                <Tabs.Panel value="overview" pt="lg">
+                <Tabs.Panel value="overview">
                   <Grid>
                     <Grid.Col span={{ base: 12, md: 8 }}>
                       <Card withBorder>
@@ -306,7 +310,7 @@ export default function AdminDashboard() {
                   </Grid>
                 </Tabs.Panel>
 
-                <Tabs.Panel value="forms" pt="lg">
+                <Tabs.Panel value="forms">
                   <Grid>
                     <Grid.Col span={{ base: 12, lg: 6 }}>
                       <Card withBorder>
@@ -347,9 +351,39 @@ export default function AdminDashboard() {
                               {...form.getInputProps('role')}
                             />
                             <SelectWithFlags
-                              label="Country"
+                              label="Country (Default - Names)"
                               placeholder="Select country"
                               {...form.getInputProps('country')}
+                            />
+                            <SelectWithFlags
+                              label="Phone Country Code"
+                              placeholder="Select country code"
+                              labelValue="code"
+                              priorityList={['US', 'GB', 'CA', 'AU', 'DE', 'FR', 'JP', 'CN', 'IN']}
+                              {...form.getInputProps('phoneCountryCode')}
+                            />
+                            <SelectWithFlags
+                              label="Priority Countries (G7 + BRICS)"
+                              placeholder="Select priority country"
+                              priorityList={['US', 'GB', 'CA', 'DE', 'FR', 'IT', 'JP', 'CN', 'IN', 'BR', 'RU', 'ZA']}
+                              {...form.getInputProps('priorityCountry')}
+                            />
+                            <SelectWithFlags
+                              label="European Countries Only (Whitelist)"
+                              placeholder="Select European country"
+                              whiteList={[
+                                'GB', 'DE', 'FR', 'IT', 'ES', 'NL', 'BE', 'AT', 'CH', 'SE',
+                                'NO', 'DK', 'FI', 'IE', 'PT', 'PL', 'CZ', 'HU', 'GR', 'RO'
+                              ]}
+                              priorityList={['GB', 'DE', 'FR', 'IT', 'ES']}
+                              {...form.getInputProps('europeanCountry')}
+                            />
+                            <SelectWithFlags
+                              label="Countries (Excluding Blacklisted)"
+                              placeholder="Select country (CN, RU, KP excluded)"
+                              blackList={['CN', 'RU', 'KP', 'IR', 'SY']}
+                              priorityList={['US', 'GB', 'CA', 'AU', 'DE', 'FR', 'JP']}
+                              {...form.getInputProps('blacklistCountry')}
                             />
                             <Textarea
                               label="Bio"
@@ -380,7 +414,7 @@ export default function AdminDashboard() {
                               {...form.getInputProps('newsletter', { type: 'checkbox' })}
                             />
                             <Group justify="flex-end">
-                              <Button type="submit">Submit</Button>
+                              <Button type="submit">Submit Complete Form</Button>
                             </Group>
                           </Stack>
                         </form>
@@ -456,7 +490,7 @@ export default function AdminDashboard() {
                   </Grid>
                 </Tabs.Panel>
 
-                <Tabs.Panel value="components" pt="lg">
+                <Tabs.Panel value="components">
                   <SimpleGrid cols={{ base: 1, md: 2, lg: 3 }} spacing="md">
                     <Card withBorder>
                       <Title order={4} mb="md">Loading States</Title>

@@ -99,10 +99,10 @@ export const materialTheme = createTheme({
           },
 
           '&:hover::before': { opacity: 0.08 },
-          '&:focus-visible::before': { opacity: 0.12 },
+          '&:focusWithin::before': { opacity: 0.12 },
           '&:active::before': { opacity: 0.16 },
 
-          '&[data-variant="filled"]': {
+          '&[dataVariant="filled"]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
             color: 'white',
             boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
@@ -124,7 +124,7 @@ export const materialTheme = createTheme({
             },
           },
 
-          '&[data-variant="outline"]': {
+          '&[dataVariant="outline"]': {
             backgroundColor: 'transparent',
             color: 'var(--mantine-color-md-primary-7)',
             border: '1px solid var(--mantine-color-md-primary-7)',
@@ -139,7 +139,7 @@ export const materialTheme = createTheme({
             },
           },
 
-          '&[data-variant="subtle"]': {
+          '&[dataVariant="subtle"]': {
             backgroundColor: 'transparent',
             color: 'var(--mantine-color-md-primary-7)',
             border: 'none',
@@ -152,7 +152,7 @@ export const materialTheme = createTheme({
             },
           },
 
-          '&[data-variant="light"]': {
+          '&[dataVariant="light"]': {
             backgroundColor: 'var(--mantine-color-md-secondary-2)',
             color: 'var(--mantine-color-md-primary-7)',
             border: 'none',
@@ -192,7 +192,7 @@ export const materialTheme = createTheme({
             transform: 'translateY(-2px)',
           },
 
-          '&[data-variant="elevated"]': {
+          '&[dataVariant="elevated"]': {
             backgroundColor: '#F7F2FA',
             boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
 
@@ -201,7 +201,7 @@ export const materialTheme = createTheme({
             },
           },
 
-          '&[data-variant="filled"]': {
+          '&[dataVariant="filled"]': {
             backgroundColor: '#E6E0E9',
             boxShadow: 'none',
 
@@ -210,7 +210,7 @@ export const materialTheme = createTheme({
             },
           },
 
-          '&[data-variant="outline"]': {
+          '&[dataVariant="outline"]': {
             backgroundColor: '#FFFFFF',
             border: '1px solid var(--mantine-color-md-surface-4)',
             boxShadow: 'none',
@@ -222,16 +222,6 @@ export const materialTheme = createTheme({
           },
         },
 
-        section: {
-          padding: '16px 24px',
-
-          '&:first-of-type': {
-            paddingTop: 24,
-          },
-          '&:last-of-type': {
-            paddingBottom: 24,
-          },
-        },
       },
     },
 
@@ -240,15 +230,6 @@ export const materialTheme = createTheme({
         root: {
           position: 'relative',
           width: '100%',
-          '&:has(input:focus) label, &:has(input:not(:placeholder-shown)) label': {
-            top: '-0.45rem !important',
-            transform: 'translateY(0) !important',
-            fontSize: '0.75rem !important',
-            color: 'var(--mantine-color-md-primary-7) !important',
-          },
-          '&[data-invalid] label': {
-            color: 'var(--mantine-color-md-error-6) !important',
-          },
         },
 
         input: {
@@ -276,17 +257,17 @@ export const materialTheme = createTheme({
             color: 'rgba(29,27,32,0.38)',
           },
 
-          '&[data-invalid]': {
+          '&[dataInvalid]': {
             borderColor: 'var(--mantine-color-md-error-6)',
             '&:focus': {
               borderColor: 'var(--mantine-color-md-error-6)',
             },
           },
 
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '44px',
           },
-          '&[data-with-right-section]': {
+          '&[dataWithRightSection]': {
             paddingRight: '44px',
           },
         },
@@ -410,7 +391,7 @@ export const materialTheme = createTheme({
             boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '44px',
           },
         },
@@ -431,11 +412,6 @@ export const materialTheme = createTheme({
 
           '&:hover': {
             backgroundColor: 'rgba(103,80,164,0.08)',
-          },
-
-          '&[data-selected]': {
-            backgroundColor: 'var(--mantine-color-md-secondary-2)',
-            color: 'var(--mantine-color-md-primary-7)',
           },
         },
       },
@@ -472,7 +448,7 @@ export const materialTheme = createTheme({
             boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '44px',
           },
         },
@@ -517,7 +493,7 @@ export const materialTheme = createTheme({
             boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '44px',
           },
         },
@@ -555,7 +531,7 @@ export const materialTheme = createTheme({
             boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '44px',
           },
         },
@@ -604,7 +580,7 @@ export const materialTheme = createTheme({
             boxShadow: '0 0 0 1px var(--mantine-color-md-primary-7)',
           },
 
-          '&[data-with-left-section]': {
+          '&[dataWithLeftSection]': {
             paddingLeft: '44px',
           },
         },
@@ -617,7 +593,7 @@ export const materialTheme = createTheme({
           borderRadius: 20,
           transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
-          '&[data-variant="filled"]': {
+          '&[dataVariant="filled"]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
             color: 'white',
 
@@ -627,7 +603,7 @@ export const materialTheme = createTheme({
             },
           },
 
-          '&[data-variant="light"]': {
+          '&[dataVariant="light"]': {
             backgroundColor: 'var(--mantine-color-md-secondary-2)',
             color: 'var(--mantine-color-md-primary-7)',
 
@@ -636,7 +612,7 @@ export const materialTheme = createTheme({
             },
           },
 
-          '&[data-variant="outline"]': {
+          '&[dataVariant="outline"]': {
             backgroundColor: 'transparent',
             border: '1px solid var(--mantine-color-md-surface-4)',
             color: 'var(--mantine-color-md-surface-8)',
@@ -647,7 +623,7 @@ export const materialTheme = createTheme({
             },
           },
 
-          '&[data-variant="subtle"]': {
+          '&[dataVariant="subtle"]': {
             backgroundColor: 'transparent',
             color: 'var(--mantine-color-md-surface-8)',
 
@@ -669,7 +645,7 @@ export const materialTheme = createTheme({
           width: 45,
           transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
-          '&[data-checked]': {
+          '&[dataChecked]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
             borderColor: 'var(--mantine-color-md-primary-7)',
           },
@@ -684,7 +660,7 @@ export const materialTheme = createTheme({
           boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
           transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
-          '&[data-checked]': {
+          '&[dataChecked]': {
             backgroundColor: 'white',
           },
         },
@@ -730,15 +706,6 @@ export const materialTheme = createTheme({
         root: {
           position: 'relative',
           width: '100%',
-          '&:has(textarea:focus) label, &:has(textarea:not(:placeholder-shown)) label': {
-            top: '-0.45rem !important',
-            transform: 'translateY(0) !important',
-            fontSize: '0.75rem !important',
-            color: 'var(--mantine-color-md-primary-7) !important',
-          },
-          '&[data-invalid] label': {
-            color: 'var(--mantine-color-md-error-6) !important',
-          },
         },
 
         input: {
@@ -917,18 +884,18 @@ export const materialTheme = createTheme({
           height: 'auto',
           minHeight: 24,
 
-          '&[data-variant="filled"]': {
+          '&[dataVariant="filled"]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
             color: 'white',
           },
 
-          '&[data-variant="outline"]': {
+          '&[dataVariant="outline"]': {
             backgroundColor: 'transparent',
             border: '1px solid var(--mantine-color-md-surface-4)',
             color: 'var(--mantine-color-md-surface-8)',
           },
 
-          '&[data-variant="light"]': {
+          '&[dataVariant="light"]': {
             backgroundColor: 'var(--mantine-color-md-secondary-1)',
             color: 'var(--mantine-color-md-primary-7)',
           },
@@ -1094,7 +1061,7 @@ export const materialTheme = createTheme({
             color: 'var(--mantine-color-md-primary-7)',
           },
 
-          '&[data-active]': {
+          '&[dataActive]': {
             color: 'var(--mantine-color-md-primary-7)',
             backgroundColor: 'transparent',
 
@@ -1140,7 +1107,7 @@ export const materialTheme = createTheme({
             backgroundColor: 'rgba(103,80,164,0.08)',
           },
 
-          '&[data-active]': {
+          '&[dataActive]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
             color: 'white',
             boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15)',
@@ -1164,7 +1131,7 @@ export const materialTheme = createTheme({
             borderColor: 'var(--mantine-color-md-primary-7)',
           },
 
-          '&[data-checked]': {
+          '&[dataChecked]': {
             backgroundColor: 'var(--mantine-color-md-secondary-2)',
             borderColor: 'var(--mantine-color-md-primary-7)',
             color: 'var(--mantine-color-md-primary-7)',
@@ -1196,12 +1163,12 @@ export const materialTheme = createTheme({
           borderRadius: 12,
           border: 'none',
 
-          '&[data-variant="elevated"]': {
+          '&[dataVariant="elevated"]': {
             boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15)',
             backgroundColor: '#F7F2FA',
           },
 
-          '&[data-variant="outline"]': {
+          '&[dataVariant="outline"]': {
             backgroundColor: '#FFFFFF',
             border: '1px solid var(--mantine-color-md-surface-4)',
           },
@@ -1215,17 +1182,17 @@ export const materialTheme = createTheme({
           borderRadius: 20,
           transition: 'all 150ms cubic-bezier(0.2, 0, 0, 1)',
 
-          '&[data-variant="filled"]': {
+          '&[dataVariant="filled"]': {
             backgroundColor: 'var(--mantine-color-md-primary-7)',
             color: 'white',
           },
 
-          '&[data-variant="light"]': {
+          '&[dataVariant="light"]': {
             backgroundColor: 'var(--mantine-color-md-secondary-2)',
             color: 'var(--mantine-color-md-primary-7)',
           },
 
-          '&[data-variant="outline"]': {
+          '&[dataVariant="outline"]': {
             backgroundColor: 'transparent',
             border: '1px solid var(--mantine-color-md-surface-4)',
             color: 'var(--mantine-color-md-surface-8)',
@@ -1274,7 +1241,7 @@ export const materialTheme = createTheme({
             backgroundColor: 'rgba(103,80,164,0.08)',
           },
 
-          '&[data-active]': {
+          '&[dataActive]': {
             color: 'var(--mantine-color-md-primary-7)',
           },
         },
@@ -1368,11 +1335,6 @@ export const materialTheme = createTheme({
 
           '&:hover': {
             backgroundColor: 'rgba(103,80,164,0.08)',
-          },
-
-          '&[data-selected]': {
-            backgroundColor: 'var(--mantine-color-md-secondary-2)',
-            color: 'var(--mantine-color-md-primary-7)',
           },
         },
 
@@ -1489,16 +1451,16 @@ export const materialTheme = createTheme({
           maxHeight: '400px',
           overflowY: 'auto',
 
-          '&::-webkit-scrollbar': {
+          '&::WebkitScrollbar': {
             width: '8px',
           },
 
-          '&::-webkit-scrollbar-track': {
+          '&::WebkitScrollbarTrack': {
             background: 'var(--mantine-color-md-surface-2)',
             borderRadius: 4,
           },
 
-          '&::-webkit-scrollbar-thumb': {
+          '&::WebkitScrollbarThumb': {
             background: 'var(--mantine-color-md-surface-5)',
             borderRadius: 4,
 
@@ -1519,11 +1481,6 @@ export const materialTheme = createTheme({
 
           '&:hover': {
             background: 'rgba(103,80,164,0.08)',
-          },
-
-          '&[data-selected]': {
-            background: 'var(--mantine-color-md-secondary-2)',
-            color: 'var(--mantine-color-md-primary-7)',
           },
         },
 
